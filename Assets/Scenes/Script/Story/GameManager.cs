@@ -16,8 +16,6 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -66,9 +64,11 @@ public class GameManager : MonoBehaviour
     {
         currentSceneIndex = nextSceneIndex;
         SaveProgress();
+        
 
-        // 자동으로 다음 Scene 실행
         if (isStoryMode)
+        {
             StartStory();
+        }
     }
 }

@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea166089ceb3ed84f8fb2e99caaa1864, type: 3}
+  m_Name: S1_Intro
+  m_EditorClassIdentifier: 
+  sceneName: S1_Intro
+  sceneType: 2
+  events:
+  - description: in1_1
+    actions:
+    - type: 4
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 1
+      cameraTargetSize: 5
+      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
+      waitDuration: 1
+    - type: 3
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraMoveDuration: 4
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+  - description: in1_2
+    actions:
+    - type: 4
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+    - type: 3
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: -10}
+      cameraMoveDuration: 4
+      cameraTargetSize: 5
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+  - description: in1_3
+    actions:
+    - type: 4
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
+      waitDuration: 1
+    - type: 3
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraMoveDuration: 4
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+  - description: in1_4
+    actions:
+    - type: 4
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+    - type: 3
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+  - description: in1_wait
+    actions:
+    - type: 5
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: -10}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+  - description: in1_finishCam
+    actions:
+    - type: 3
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: -5, y: 3, z: -10}
+      cameraMoveDuration: 2
+      cameraTargetSize: 3
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+  nextCondition:
+    type: 0
+    parameter: 

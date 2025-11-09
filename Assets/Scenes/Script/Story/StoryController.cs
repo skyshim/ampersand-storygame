@@ -8,27 +8,30 @@ public class StoryController : MonoBehaviour
 
     public DialogueUI dialogueUI;
     public CharacterManager characterManager;
+    public CameraManager cameraManager;
+    public BackgroundManager backgroundManager;
 
     [Header("Scene 순서대로 불러오기 (Resources/StoryScenes 폴더)")]
     public StoryScene[] storyScenes;
 
+    public bool isProcessing = false;
     private int currentSceneIndex = 0;
-    private bool isProcessing = false;
 
     private void Awake()
     {
         Instance = this;
-
-        // Resources 폴더에서 Scene Asset 로드
-        storyScenes = Resources.LoadAll<StoryScene>("StoryScenes");
     }
 
     private void Update()
     {
         if (isProcessing) return;
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        if (currentSceneIndex < storyScenes.Length &&
+            storyScenes[currentSceneIndex].sceneType == SceneType.Dialogue)
         {
-            OnClick();
+            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+            {
+                OnClick();
+            }
         }
     }
 
@@ -49,7 +52,14 @@ public class StoryController : MonoBehaviour
 
     private IEnumerator ExecuteScene(StoryScene scene)
     {
+        Debug.Log(scene.sceneName);
         isProcessing = true;
+
+        bool isDialogueScene = scene.sceneType == SceneType.Dialogue;
+        if (isDialogueScene)
+            dialogueUI.panel.SetActive(true);
+        else
+            dialogueUI.panel.SetActive(false);
 
         foreach (var e in scene.events)
         {
@@ -57,6 +67,7 @@ public class StoryController : MonoBehaviour
 
             foreach (var action in e.actions)
             {
+                Debug.Log(action.type);
                 switch (action.type)
                 {
                     case StoryAction.ActionType.Dialogue:
@@ -81,6 +92,26 @@ public class StoryController : MonoBehaviour
 
                     case StoryAction.ActionType.Animate:
                         characterManager.PlayAnimation(action.characterName, action.animationTrigger);
+                        break;
+
+                    case StoryAction.ActionType.CameraMove:
+                        runningCoroutines.Add(
+                            StartCoroutine(CameraManager.Instance.MoveCamera(
+                                action.cameraTargetPosition,
+                                action.cameraMoveDuration,
+                                action.cameraTargetSize
+                            ))
+                        );
+                        Debug.Log("CameraMove: " + action.cameraTargetPosition);
+                        break;
+
+                    case StoryAction.ActionType.BackgroundChange:
+                        BackgroundManager.Instance.ChangeBackground(action.newBackground);
+                        Debug.Log("BackgroundChange: " + action.newBackground.name);
+                        break;
+
+                    case StoryAction.ActionType.Wait:
+                        yield return new WaitForSeconds(action.waitDuration);
                         break;
                 }
             }

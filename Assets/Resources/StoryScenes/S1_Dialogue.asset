@@ -15,119 +15,255 @@ MonoBehaviour:
   sceneName: S1_Dialogue
   sceneType: 0
   events:
+  - description: 1-wait
+    actions:
+    - type: 5
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+  - description: 1-1_h
+    actions:
+    - type: 5
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-1_h
     actions:
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "1\uB144\uC774 \uB610 \uC774\uB807\uAC8C \uAC00\uB124.. \uC774\uC81C
         \uC9C4\uC9DC \uB05D\uC774\uB2E4."
+      isBalloon: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-2_en
     actions:
     - type: 0
       characterName: "\uC740\uD6C4"
       dialogueText: "\uBC8C\uC368 \uC774 \uD559\uAD50\uB3C4 \uC548\uB155\uC774\uB124. "
+      isBalloon: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-3_s
     actions:
     - type: 1
       characterName: "\uC11C\uC9C4"
-      dialogueText: 
-      targetPosition: {x: 0, y: 3, z: 0}
+      dialogueText: "\uBC8C\uC368 \uC774 \uD559\uAD50\uB3C4 \uC548\uB155\uC774\uB124. "
+      isBalloon: 0
+      targetPosition: {x: -4, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: 
+      animationTrigger: s_left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\u2019\uB4DC\uB514\uC5B4\u2018 \uC548\uB155\uC774\uC9C0!! \uAC70\uC9C0
-        \uAC19\uC740 \uC6B4\uC815\uACE0 \uB4DC\uB514\uC5B4 \uD0C8\uCD9C\uC774\uC57C!"
-      targetPosition: {x: 0, y: 0, z: 0}
+        \uAC19\uC740 \uC6B4\uC815\uACE0 \uB4DC\uB514\uC5B4 \uD0C8\uCD9C\uC774\uC57C! "
+      isBalloon: 0
+      targetPosition: {x: 3.5, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-4_a
     actions:
     - type: 1
       characterName: "\uC544\uC724"
-      dialogueText: 
-      targetPosition: {x: -7, y: 3, z: 0}
+      dialogueText: "\uBC8C\uC368 \uC774 \uD559\uAD50\uB3C4 \uC548\uB155\uC774\uB124. "
+      isBalloon: 0
+      targetPosition: {x: -8, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: 
+      animationTrigger: a_right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC57C- \uB10C \uBB34\uC2A8 \uB9D0\uC744 \uADF8\uB807\uAC8C
         \uD558\uB0D0. \uADF8\uB798\uB3C4 \uC88B\uC740 \uC77C\uB4E4 \uB9CE\uC558\uC796\uC544. "
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 3.5, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-5_s
     actions:
+    - type: 1
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: -4, y: 4.2, z: 0}
+      moveDuration: 1
+      animationTrigger: a_right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uC88B\uC740 \uC77C\uC740 \uAC1C\uBFD4. \uC5EC\uAE30 \uC640\uC11C
         \uACE0\uC0DD\uD55C \uAC8C \uB108\uBB34 \uB9CE\uC544. \uC5ED\uC2DC \uB3D9\uD328\uACE0\uB97C
         \uAC14\uC5B4\uC57C \uD588\uC5B4\u2026 "
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 3.5, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-6_a
     actions:
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uBB50\uB798, \uB108 \uB3D9\uD328 \uAC14\uC5B4\uB3C4 \uB0B4\uC2E0- "
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 3.5, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-7_h
     actions:
     - type: 1
       characterName: "\uD574\uC601"
       dialogueText: 
-      targetPosition: {x: -4.5, y: 3, z: 0}
+      isBalloon: 0
+      targetPosition: {x: -6.7, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: 
+      animationTrigger: h_front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC790 \uC790. \uADF8\uB9CC \uC2F8\uC6B0\uC2DC\uACE0\uC694.
         \uB9C8\uC9C0\uB9C9\uC774\uC796\uC544. \uC544, \uC9C0\uAE08 \uBA87 \uC2DC\uC9C0?"
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-8_en
     actions:
+    - type: 1
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: -5.4, y: 4.2, z: 0}
+      moveDuration: 1
+      animationTrigger: en_front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
     - type: 0
       characterName: "\uC740\uD6C4"
       dialogueText: "5\uC2DC 16\uBD84."
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-9_h
     actions:
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC5BC\uB978 \uCD9C\uBC1C\uD560\uAE4C? \uC601\uD654\uB294 \uBA87
         \uC2DC\uB354\uB77C? "
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-10_en
     actions:
     - type: 0
       characterName: "\uC740\uD6C4"
       dialogueText: "6\uC2DC 20\uBD84."
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   - description: 1-11_s
     actions:
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uADF8\uB798.. \uC2AC\uC2AC \uCD9C\uBC1C\uD558\uC790.  "
-      targetPosition: {x: 0, y: 0, z: 0}
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
       moveDuration: 0
       animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
   nextCondition:
     type: 0
     parameter: 

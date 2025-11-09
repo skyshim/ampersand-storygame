@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: S1_CutSceen_FindCamera
   sceneType: 2
-  events: []
+  events:
+  - description: 
+    actions: []
   nextCondition:
     type: 0
     parameter: 
