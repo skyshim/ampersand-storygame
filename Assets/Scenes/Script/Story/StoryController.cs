@@ -57,9 +57,16 @@ public class StoryController : MonoBehaviour
 
         bool isDialogueScene = scene.sceneType == SceneType.Dialogue;
         if (isDialogueScene)
+        {
             dialogueUI.panel.SetActive(true);
+            Debug.Log("dialog activated");
+        }
         else
+        {
             dialogueUI.panel.SetActive(false);
+            Debug.Log("dialog deactivated");
+        }
+           
 
         foreach (var e in scene.events)
         {
@@ -72,7 +79,7 @@ public class StoryController : MonoBehaviour
                 {
                     case StoryAction.ActionType.Dialogue:
                         var charData = characterManager.GetCharacter(action.characterName);
-                        dialogueUI.ShowDialogue(action.characterName, action.dialogueText, charData?.portrait);
+                        dialogueUI.ShowDialogue(action.characterName, action.dialogueText, action.isBalloon, charData?.portrait, charData?.transform);
 
                         while (dialogueUI.IsTyping)
                             yield return null;
