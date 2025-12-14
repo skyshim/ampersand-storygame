@@ -25,6 +25,8 @@ public class StoryController : MonoBehaviour
     private void Update()
     {
         if (isProcessing) return;
+
+        // Dialogue 씬일 때만 클릭 입력 처리
         if (currentSceneIndex < storyScenes.Length &&
             storyScenes[currentSceneIndex].sceneType == SceneType.Dialogue)
         {
@@ -55,6 +57,7 @@ public class StoryController : MonoBehaviour
         Debug.Log(scene.sceneName);
         isProcessing = true;
 
+        // Dialogue 씬 여부에 따라 UI 활성화
         bool isDialogueScene = scene.sceneType == SceneType.Dialogue;
         if (isDialogueScene)
         {
@@ -66,8 +69,8 @@ public class StoryController : MonoBehaviour
             dialogueUI.panel.SetActive(false);
             Debug.Log("dialog deactivated");
         }
-           
 
+        // 씬 이벤트 실행
         foreach (var e in scene.events)
         {
             List<Coroutine> runningCoroutines = new List<Coroutine>();
@@ -135,5 +138,26 @@ public class StoryController : MonoBehaviour
 
         isProcessing = false;
         GameManager.Instance.OnSceneComplete(nextIndex);
+
+        // 씬 타입 감지해서 조이스틱 켜기/끄기
+        if (nextIndex < storyScenes.Length)
+        {
+            var nextScene = storyScenes[nextIndex];
+            JoystickScript joystick = FindObjectOfType<JoystickScript>();
+
+            if (joystick != null)
+            {
+                if (nextScene.sceneType == SceneType.PlayerControl)
+                {
+                    joystick.EnableJoystick(true);
+                    Debug.Log("Joystick Enabled (PlayerControl Scene)");
+                }
+                else
+                {
+                    joystick.EnableJoystick(false);
+                    Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
+                }
+            }
+        }
     }
 }
