@@ -26,7 +26,6 @@ public class StoryController : MonoBehaviour
     {
         if (isProcessing) return;
 
-        // Dialogue 씬일 때만 클릭 입력 처리
         if (currentSceneIndex < storyScenes.Length &&
             storyScenes[currentSceneIndex].sceneType == SceneType.Dialogue)
         {
@@ -57,27 +56,14 @@ public class StoryController : MonoBehaviour
         Debug.Log(scene.sceneName);
         isProcessing = true;
 
-        // Dialogue 씬 여부에 따라 UI 활성화
-        bool isDialogueScene = scene.sceneType == SceneType.Dialogue;
-        if (isDialogueScene)
-        {
-            dialogueUI.panel.SetActive(true);
-            Debug.Log("dialog activated");
-        }
-        else
-        {
-            dialogueUI.panel.SetActive(false);
-            Debug.Log("dialog deactivated");
-        }
+        dialogueUI.panel.SetActive(scene.sceneType == SceneType.Dialogue);
 
-        // 씬 이벤트 실행
         foreach (var e in scene.events)
         {
             List<Coroutine> runningCoroutines = new List<Coroutine>();
 
             foreach (var action in e.actions)
             {
-                Debug.Log(action.type);
                 switch (action.type)
                 {
                     case StoryAction.ActionType.Dialogue:
@@ -112,12 +98,10 @@ public class StoryController : MonoBehaviour
                                 action.cameraTargetSize
                             ))
                         );
-                        Debug.Log("CameraMove: " + action.cameraTargetPosition);
                         break;
 
                     case StoryAction.ActionType.BackgroundChange:
                         BackgroundManager.Instance.ChangeBackground(action.newBackground);
-                        Debug.Log("BackgroundChange: " + action.newBackground.name);
                         break;
 
                     case StoryAction.ActionType.Wait:
@@ -126,37 +110,27 @@ public class StoryController : MonoBehaviour
                 }
             }
 
-            // 병렬 Move 액션 끝날 때까지 대기
             foreach (var c in runningCoroutines)
                 yield return c;
         }
 
-        // Scene 종료 후 GameManager에게 알림
         int nextIndex = currentSceneIndex;
         if (scene.nextCondition != null && scene.nextCondition.type == NextCondition.ConditionType.Auto)
             nextIndex++;
 
         isProcessing = false;
         GameManager.Instance.OnSceneComplete(nextIndex);
+        Debug.Log("ExecuteScene finished, nextIndex = " + nextIndex);
 
-        // 씬 타입 감지해서 조이스틱 켜기/끄기
         if (nextIndex < storyScenes.Length)
         {
             var nextScene = storyScenes[nextIndex];
-            JoystickScript joystick = FindObjectOfType<JoystickScript>();
+            GameManager.Instance.OnSceneTypeChanged(nextScene.sceneType);
 
-            if (joystick != null)
+            if (nextScene.sceneType == SceneType.PlayerControl)
             {
-                if (nextScene.sceneType == SceneType.PlayerControl)
-                {
-                    joystick.EnableJoystick(true);
-                    Debug.Log("Joystick Enabled (PlayerControl Scene)");
-                }
-                else
-                {
-                    joystick.EnableJoystick(false);
-                    Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
-                }
+                // PlayerControl 씬인데 대화까지 끝났다면
+                GameManager.Instance.OnDialogueFinished();
             }
         }
     }

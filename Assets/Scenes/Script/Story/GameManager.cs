@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -23,52 +21,70 @@ public class GameManager : MonoBehaviour
         StartStory();
     }
 
-    /// <summary>
-    /// 스토리 모드 시작
-    /// </summary>
     public void StartStory()
     {
         isStoryMode = true;
         storyController.StartScene(currentSceneIndex);
     }
 
-    /// <summary>
-    /// 플레이어 모드 시작
-    /// </summary>
     public void StartPlayerMode()
     {
         isStoryMode = false;
-        // 플레이어 조작 활성화
+
+        JoystickScript joystick = FindObjectOfType<JoystickScript>();
+        if (joystick != null)
+        {
+            joystick.EnableJoystick(true);
+            Debug.Log("Joystick Enabled by GameManager");
+        }
     }
 
-    /// <summary>
-    /// 스토리 진행 상태 저장
-    /// </summary>
     public void SaveProgress()
     {
         PlayerPrefs.SetInt("CurrentSceneIndex", currentSceneIndex);
     }
 
-    /// <summary>
-    /// 스토리 진행 상태 불러오기
-    /// </summary>
     public void LoadProgress()
     {
         currentSceneIndex = PlayerPrefs.GetInt("CurrentSceneIndex", 0);
     }
 
-    /// <summary>
-    /// 스토리 Scene이 끝났을 때 호출
-    /// </summary>
     public void OnSceneComplete(int nextSceneIndex)
     {
         currentSceneIndex = nextSceneIndex;
         SaveProgress();
-        
 
         if (isStoryMode)
         {
             StartStory();
         }
+    }
+
+    public void OnSceneTypeChanged(SceneType type)
+    {
+        Debug.Log("OnSceneTypeChanged called with: " + type);
+        JoystickScript joystick = FindObjectOfType<JoystickScript>();
+        if (joystick == null) return;
+
+        if (type == SceneType.PlayerControl)
+        {
+            Debug.Log("SceneType PlayerControl detected");
+            // 아직 대화가 남아있을 수 있으므로 여기서는 바로 켜지지 않음
+        }
+        else
+        {
+            joystick.EnableJoystick(false);
+            Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
+        }
+    }
+
+    public void OnDialogueFinished()
+    {
+        // 대화까지 끝났을 때 진짜 플레이어 모드 시작
+        Debug.Log("OnDialogueFinished");
+        StartPlayerMode();
+        Input.ResetInputAxes();
+
+        StartPlayerMode();
     }
 }

@@ -1,36 +1,26 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JoystickScript : MonoBehaviour
 {
-    public RectTransform joystickBack;   // JoystickBack (Image)
-    public RectTransform joystickHandle; // JoystickHandle (Image)
+    public RectTransform joystickBack;
+    public RectTransform joystickHandle;
+    public Canvas canvas;
 
     private Vector2 inputVector;
     private bool isEnabled = false;
 
     void Start()
     {
+        // 오브젝트는 Active 상태로 두고, UI만 숨김
         joystickBack.gameObject.SetActive(false);
+        joystickHandle.gameObject.SetActive(false);
     }
 
     void Update()
     {
         if (!isEnabled) return;
 
-        // 터치 입력
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
-                ShowJoystick(touch.position);
-            else if (touch.phase == TouchPhase.Moved)
-                UpdateHandle(touch.position);
-            else if (touch.phase == TouchPhase.Ended)
-                HideJoystick();
-        }
-
-        // 마우스 입력
         if (Input.GetMouseButtonDown(0))
             ShowJoystick(Input.mousePosition);
 
@@ -41,38 +31,37 @@ public class JoystickScript : MonoBehaviour
             HideJoystick();
     }
 
-    public Vector2 Direction => SnapTo8Directions(inputVector);
-
-    private Vector2 SnapTo8Directions(Vector2 input)
-    {
-        if (input == Vector2.zero) return Vector2.zero;
-
-        float angle = Mathf.Atan2(input.y, input.x) * Mathf.Rad2Deg;
-        float snappedAngle = Mathf.Round(angle / 45f) * 45f;
-        float rad = snappedAngle * Mathf.Deg2Rad;
-
-        return new Vector2(Mathf.Cos(rad), Mathf.Sin(rad)).normalized;
-    }
-
     public void EnableJoystick(bool enable)
     {
+        Debug.Log("EnableJoystick called: " + enable);
         isEnabled = enable;
         if (!enable) HideJoystick();
     }
 
     private void ShowJoystick(Vector2 screenPosition)
     {
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            (RectTransform)joystickBack.parent,
+            canvasRect,
             screenPosition,
-            null, // Overlay 모드일 경우 null, Camera 모드면 Camera.main
+            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
             out localPoint
         );
 
+        // 백 위치 설정
         joystickBack.anchoredPosition = localPoint;
-        joystickHandle.anchoredPosition = Vector2.zero;
+
+        // 핸들 기준 중앙 고정
+        joystickHandle.anchorMin = joystickHandle.anchorMax = new Vector2(0.5f, 0.5f);
+        joystickHandle.pivot = new Vector2(0.5f, 0.5f);
+        joystickHandle.localPosition = Vector3.zero;
+
         joystickBack.gameObject.SetActive(true);
+        joystickHandle.gameObject.SetActive(true);
+
+        Debug.Log("Joystick spawned at: " + localPoint);
     }
 
     private void UpdateHandle(Vector2 screenPosition)
@@ -93,6 +82,9 @@ public class JoystickScript : MonoBehaviour
     private void HideJoystick()
     {
         joystickBack.gameObject.SetActive(false);
+        joystickHandle.gameObject.SetActive(false);
         inputVector = Vector2.zero;
     }
+
+    public Vector2 Direction => inputVector;
 }
