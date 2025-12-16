@@ -54,12 +54,12 @@ public class DialogueUI : MonoBehaviour
     }
     IEnumerator TypeBalloon(string text)
     {
-        balloonText.text = "";
 
+        ResizeBalloon(balloonText);
         foreach (char c in text)
         {
             balloonText.text += c;
-            ResizeBalloon();
+            
             yield return new WaitForSeconds(0.03f);
         }
 
@@ -68,12 +68,9 @@ public class DialogueUI : MonoBehaviour
 
     public bool IsTyping => typingCoroutine != null;
 
-    void ResizeBalloon()
+    void ResizeBalloon(Text text)
     {
-        float textWidth = balloonText.preferredWidth;
-        float worldWidth = textWidth / 100f;
-
-        float finalWidth = Mathf.Max(0.3f, worldWidth + 1.2f);
+        float finalWidth = text.preferredWidth;
 
         Vector2 size = balloonRenderer.size;
         size.x = finalWidth;

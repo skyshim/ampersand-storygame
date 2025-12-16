@@ -53,7 +53,7 @@ MonoBehaviour:
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
-      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
     - type: 3
       characterName: 
@@ -105,7 +105,7 @@ MonoBehaviour:
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
-      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      newBackground: {fileID: 21300000, guid: c7d6b8c98b66fcc409dd0f101a998516, type: 3}
       waitDuration: 1
     - type: 3
       characterName: 
