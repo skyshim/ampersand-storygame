@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class StoryAction
 {
-    public enum ActionType { Dialogue, Move, Animate, CameraMove, BackgroundChange, Wait }
+    public enum ActionType { Dialogue, Move, Animate, CameraMove, BackgroundChange, Wait, SetCharacter}
     public ActionType type;
 
     // Dialogue
@@ -30,4 +30,7 @@ public class StoryAction
 
     // Wait
     public float waitDuration = 1f;
+
+    // SetCharacter
+    public string playingCharacterName;
 }

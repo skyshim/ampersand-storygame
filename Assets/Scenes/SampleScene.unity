@@ -562,6 +562,11 @@ MonoBehaviour:
     transform: {fileID: 7442201}
     animator: {fileID: 0}
     portrait: {fileID: 21300000, guid: a670232f0ff3f0844bb0a3425ae20471, type: 3}
+  currentCharacter:
+    characterName: 
+    transform: {fileID: 0}
+    animator: {fileID: 0}
+    portrait: {fileID: 0}
 --- !u!4 &288876350
 Transform:
   m_ObjectHideFlags: 0
@@ -1245,6 +1250,7 @@ Transform:
   - {fileID: 770275127}
   - {fileID: 714625293}
   - {fileID: 1084293241}
+  - {fileID: 1671172626}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042385303
@@ -1510,6 +1516,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398173092}
   m_CullTransparentMesh: 1
+--- !u!1 &1671172625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1671172626}
+  - component: {fileID: 1671172627}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1671172626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671172625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 928114041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671172627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671172625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b4d50c2e1e0df42b488255e904d894, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterManager: {fileID: 288876349}
+  joystick: {fileID: 1860052230}
+  moveSpeed: 5
 --- !u!1 &1829667392
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: S2_Player_FindCamera
   sceneType: 1
-  events: []
+  events:
+  - description: "Set Charac : \uC11C\uC9C4"
+    actions:
+    - type: 6
+      characterName: 
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: "\uC11C\uC9C4"
   nextCondition:
     type: 0
     parameter: 

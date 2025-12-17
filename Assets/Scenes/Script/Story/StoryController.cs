@@ -107,6 +107,10 @@ public class StoryController : MonoBehaviour
                     case StoryAction.ActionType.Wait:
                         yield return new WaitForSeconds(action.waitDuration);
                         break;
+
+                    case StoryAction.ActionType.SetCharacter:
+                        characterManager.SetCurrentCharacter(action.playingCharacterName);
+                        break;
                 }
             }
 

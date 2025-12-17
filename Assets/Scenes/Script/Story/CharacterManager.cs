@@ -14,10 +14,21 @@ public class Character
 public class CharacterManager : MonoBehaviour
 {
     public List<Character> characters;
+    public Character currentCharacter;
 
     public Character GetCharacter(string name)
     {
         return characters.Find(c => c.characterName == name);
+    }
+
+    public void SetCurrentCharacter(string name)
+    {
+        currentCharacter = GetCharacter(name);
+
+        if (currentCharacter == null)
+            Debug.Log("캐릭터 못 찾음 :" + name);
+        else
+            Debug.Log("캐릭터 지정함 :" + name);
     }
 
     public IEnumerator MoveCharacter(string name, Vector3 target, float duration)
