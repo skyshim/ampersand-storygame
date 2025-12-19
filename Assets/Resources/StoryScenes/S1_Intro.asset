@@ -29,6 +29,7 @@ MonoBehaviour:
       cameraTargetSize: 5
       newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
     - type: 3
       characterName: 
       dialogueText: 
@@ -37,10 +38,11 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 2, y: 0, z: -10}
-      cameraMoveDuration: 4
+      cameraMoveDuration: 0.5
       cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
+      playingCharacterName: 
   - description: in1_2
     actions:
     - type: 4
@@ -55,6 +57,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
     - type: 3
       characterName: 
       dialogueText: 
@@ -63,10 +66,11 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 4
+      cameraMoveDuration: 0.5
       cameraTargetSize: 5
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
   - description: in1_3
     actions:
     - type: 4
@@ -81,6 +85,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
     - type: 3
       characterName: 
       dialogueText: 
@@ -89,10 +94,11 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 2, y: 0, z: -10}
-      cameraMoveDuration: 4
+      cameraMoveDuration: 0.5
       cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
+      playingCharacterName: 
   - description: in1_4
     actions:
     - type: 4
@@ -107,6 +113,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 21300000, guid: c7d6b8c98b66fcc409dd0f101a998516, type: 3}
       waitDuration: 1
+      playingCharacterName: 
     - type: 3
       characterName: 
       dialogueText: 
@@ -115,10 +122,11 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 3
+      cameraMoveDuration: 0.5
       cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
+      playingCharacterName: 
   - description: in1_wait
     actions:
     - type: 5
@@ -133,6 +141,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
   - description: in1_finishCam
     actions:
     - type: 3
@@ -143,10 +152,11 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: -5, y: 3, z: -10}
-      cameraMoveDuration: 2
+      cameraMoveDuration: 0.5
       cameraTargetSize: 3
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
+      playingCharacterName: 
   nextCondition:
     type: 0
     parameter: 

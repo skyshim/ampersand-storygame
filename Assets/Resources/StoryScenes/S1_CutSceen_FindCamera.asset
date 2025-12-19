@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneName: S1_CutSceen_FindCamera
   sceneType: 2
   events:
-  - description: 
+  - description: c1-1_zoomout
     actions:
     - type: 3
       characterName: 
@@ -25,16 +25,17 @@ MonoBehaviour:
       moveDuration: 0
       animationTrigger: 
       cameraTargetPosition: {x: -5, y: 3, z: -10}
-      cameraMoveDuration: 4
-      cameraTargetSize: 7
+      cameraMoveDuration: 2
+      cameraTargetSize: 6
       newBackground: {fileID: 0}
       waitDuration: 0
-  - description: 
+      playingCharacterName: 
+  - description: c1-2_a
     actions:
     - type: 0
-      characterName: 
-      dialogueText: 
-      isBalloon: 0
+      characterName: "\uC544\uC724"
+      dialogueText: "\uC7A0\uAE50!"
+      isBalloon: 1
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
@@ -43,6 +44,7 @@ MonoBehaviour:
       cameraTargetSize: 7
       newBackground: {fileID: 0}
       waitDuration: 0
+      playingCharacterName: 
   nextCondition:
     type: 0
     parameter: 
