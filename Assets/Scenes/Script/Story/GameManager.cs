@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public JoystickScript joystick;
     public StoryController storyController;
 
     [Header("현재 진행 상태")]
@@ -31,12 +31,13 @@ public class GameManager : MonoBehaviour
     {
         isStoryMode = false;
 
-        JoystickScript joystick = FindObjectOfType<JoystickScript>();
         if (joystick != null)
         {
-            joystick.EnableJoystick(true);
+            joystick.ShowJoystick();
             Debug.Log("Joystick Enabled by GameManager");
         }
+        else
+            Debug.Log("Jotstick already Enabled");
     }
 
     public void SaveProgress()
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            joystick.EnableJoystick(false);
+            joystick.HideJoystick();
             Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
         }
     }

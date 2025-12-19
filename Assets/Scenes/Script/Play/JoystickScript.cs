@@ -1,65 +1,55 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class JoystickScript : MonoBehaviour
 {
-    public RectTransform joystickBack;
-    public RectTransform joystickHandle;
-    public Canvas canvas;
+    // 현재 방향 입력
+    public Vector2 Direction { get; private set; }
 
-    private Vector2 inputVector;
-    private bool isEnabled;
+    // 상호작용 버튼 상태
+    public bool InteractPressed { get; private set; }
 
-    void Start() => EnableJoystick(false);
+    // Joystick 오브젝트 (하위에 Up/Down/Left/Right 버튼이 있음)
+    public GameObject joystick;
 
-    void Update()
+    // 상호작용 버튼 (Canvas 하위에 따로 배치)
+    public GameObject interactButton;
+
+    /// <summary>
+    /// 조이스틱 UI 켜기
+    /// </summary>
+    public void ShowJoystick()
     {
-        if (!isEnabled) return;
-
-        if (Input.GetMouseButtonDown(0)) ShowJoystick(Input.mousePosition);
-        else if (Input.GetMouseButton(0)) UpdateHandle(Input.mousePosition);
-        else if (Input.GetMouseButtonUp(0)) HideJoystick();
+        joystick.SetActive(true);
+        interactButton.SetActive(true);
+        Direction = Vector2.zero;
+        InteractPressed = false;
     }
 
-    public void EnableJoystick(bool enable)
+    /// <summary>
+    /// 조이스틱 UI 끄기
+    /// </summary>
+    public void HideJoystick()
     {
-        isEnabled = enable;
-        if (!enable) HideJoystick();
+        joystick.SetActive(false);
+        interactButton.SetActive(false);
+        Direction = Vector2.zero;
+        InteractPressed = false;
     }
 
-    private void ShowJoystick(Vector2 screenPosition)
+    // 방향 버튼 이벤트 (PointerDown/PointerUp에 연결)
+    public void OnUpDown() => Direction = Vector2.up;
+    public void OnDownDown() => Direction = Vector2.down;
+    public void OnLeftDown() => Direction = Vector2.left;
+    public void OnRightDown() => Direction = Vector2.right;
+
+    public void OnButtonUp() => Direction = Vector2.zero;
+
+    // 상호작용 버튼 이벤트
+    public void OnInteractDown() => InteractPressed = true;
+    public void OnInteractUp() => InteractPressed = false;
+
+    public void Start()
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.GetComponent<RectTransform>(),
-            screenPosition,
-            canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-            out var localPoint
-        );
-
-        joystickBack.anchoredPosition = localPoint;
-        joystickHandle.localPosition = Vector3.zero;
-
-        joystickBack.gameObject.SetActive(true);
-        joystickHandle.gameObject.SetActive(true);
+        HideJoystick();
     }
-
-    private void UpdateHandle(Vector2 screenPosition)
-    {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            joystickBack, screenPosition, null, out var localPoint
-        );
-
-        var clamped = Vector2.ClampMagnitude(localPoint, joystickBack.sizeDelta.x / 2f);
-        joystickHandle.anchoredPosition = clamped;
-        inputVector = clamped.normalized;
-    }
-
-    private void HideJoystick()
-    {
-        joystickBack.gameObject.SetActive(false);
-        joystickHandle.gameObject.SetActive(false);
-        inputVector = Vector2.zero;
-    }
-
-    public Vector2 Direction => inputVector;
 }
