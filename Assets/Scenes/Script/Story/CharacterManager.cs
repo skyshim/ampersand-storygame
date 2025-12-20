@@ -9,6 +9,7 @@ public class Character
     public Transform transform;
     public Animator animator;
     public Sprite portrait;
+    public Rigidbody2D rb;
 }
 
 public class CharacterManager : MonoBehaviour
@@ -23,6 +24,9 @@ public class CharacterManager : MonoBehaviour
 
     public void SetCurrentCharacter(string name)
     {
+        if (currentCharacter != null && currentCharacter.rb != null)
+            currentCharacter.rb.velocity = Vector2.zero;
+
         currentCharacter = GetCharacter(name);
 
         if (currentCharacter == null)
@@ -34,29 +38,31 @@ public class CharacterManager : MonoBehaviour
     public IEnumerator MoveCharacter(string name, Vector3 target, float duration)
     {
         var c = GetCharacter(name);
-        if (c == null)
+        if (c == null || c.rb == null)
         {
             Debug.LogWarning("캐릭터 못찾음: " + name);
             yield break;
         }
 
-        Vector3 start = c.transform.position;
+        Vector2 start = c.rb.position;
+        Vector2 end = target;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-            c.transform.position = Vector3.Lerp(start, target, t);
+            Vector2 pos = Vector2.Lerp(start, end, t);
+            c.rb.MovePosition(pos);
             yield return null;
         }
 
-        c.transform.position = target;
+        c.rb.MovePosition(end);
     }
     public void PlayAnimation(string name, string trigger)
     {
         var c = GetCharacter(name);
-        if (c == null) return;
+        if (c == null || c.animator == null) return;
         c.animator.SetTrigger(trigger);
     }
 }

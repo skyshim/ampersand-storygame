@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,23 +7,21 @@ public class PlayerController : MonoBehaviour
     public JoystickScript joystick;             // 조이스틱 스크립트
     public float moveSpeed = 5f;
 
-    void Update()
+    private void FixedUpdate()
     {
         if (characterManager.currentCharacter == null) return;
 
+        var character = characterManager.currentCharacter;
+        if (character.rb == null) return;
+
         Vector2 input = joystick.Direction;
-
-        if (input == Vector2.zero) return; // 입력 없으면 멈춤
-
-        // 이동 처리
-        characterManager.currentCharacter.transform.position +=
-            (Vector3)(input * moveSpeed * Time.deltaTime);
-
-        // 상호작용 처리
-        if (joystick.InteractPressed)
+        if (input == Vector2.zero)
         {
-            Debug.Log("InterAction!");
-            // Interact 로직 호출
+            character.rb.velocity = Vector2.zero;
+            return;
         }
+
+        Vector2 targetPos = character.rb.position + input.normalized * moveSpeed * Time.fixedDeltaTime;
+        character.rb.MovePosition(targetPos);
     }
 }

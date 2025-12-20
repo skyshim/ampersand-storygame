@@ -30,6 +30,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-2_en
     actions:
     - type: 0
@@ -44,6 +45,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-3_s
     actions:
     - type: 1
@@ -58,6 +60,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\u2019\uB4DC\uB514\uC5B4\u2018 \uC548\uB155\uC774\uC9C0!! \uAC70\uC9C0
@@ -71,6 +74,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-4_a
     actions:
     - type: 1
@@ -85,6 +89,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC57C- \uB10C \uBB34\uC2A8 \uB9D0\uC744 \uADF8\uB807\uAC8C
@@ -98,6 +103,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-5_s
     actions:
     - type: 1
@@ -112,6 +118,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uC88B\uC740 \uC77C\uC740 \uAC1C\uBFD4. \uC5EC\uAE30 \uC640\uC11C
@@ -126,6 +133,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-6_a
     actions:
     - type: 0
@@ -140,6 +148,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-7_h
     actions:
     - type: 1
@@ -154,6 +163,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC790 \uC790. \uADF8\uB9CC \uC2F8\uC6B0\uC2DC\uACE0\uC694.
@@ -167,6 +177,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-8_en
     actions:
     - type: 1
@@ -181,6 +192,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC740\uD6C4"
       dialogueText: "5\uC2DC 16\uBD84."
@@ -193,6 +205,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-9_h
     actions:
     - type: 0
@@ -208,6 +221,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-10_en
     actions:
     - type: 0
@@ -222,6 +236,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   - description: 1-11_s
     actions:
     - type: 0
@@ -236,6 +251,7 @@ MonoBehaviour:
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 2
+      playingCharacterName: 
   nextCondition:
     type: 0
     parameter: 
