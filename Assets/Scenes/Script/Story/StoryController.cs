@@ -57,6 +57,7 @@ public class StoryController : MonoBehaviour
         isProcessing = true;
 
         dialogueUI.panel.SetActive(scene.sceneType == SceneType.Dialogue);
+        dialogueUI.balloonRoot.SetActive(scene.sceneType == SceneType.Dialogue);
 
         foreach (var e in scene.events)
         {

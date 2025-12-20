@@ -1,79 +1,113 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.GraphicsBuffer;
 
 public class DialogueUI : MonoBehaviour
 {
     public Text characterText;
     public Text dialogueText;
-    public Image characterImage; // 대화창에 표시할 캐릭터 이미지
+    public Image characterImage;
     public GameObject panel;
 
-    public GameObject balloonRoot;    // 말풍선 전체
+    public GameObject balloonRoot;
     public Text balloonText;
-    public SpriteRenderer balloonRenderer;
+    public RectTransform balloonTransform;
+
+    public Vector3 screenOffset = new Vector3(5f, 5f, 0);
 
     private Coroutine typingCoroutine;
+    private Transform balloonTarget;
 
-    public void ShowDialogue(string character, string text, bool isBalloon, Sprite portrait = null, Transform target = null)
+    public void ShowDialogue(
+        string character,
+        string text,
+        bool isBalloon,
+        Sprite portrait = null,
+        Transform target = null
+    )
     {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+
         if (isBalloon)
         {
             panel.SetActive(false);
             balloonRoot.SetActive(true);
 
-            if (target != null)
-                balloonRoot.transform.position = target.position;
+            balloonTarget = target;
 
             typingCoroutine = StartCoroutine(TypeBalloon(text));
         }
-
-        else {
+        else
+        {
+            balloonRoot.SetActive(false);
             panel.SetActive(true);
+
             characterText.text = character;
             characterImage.sprite = portrait;
 
-            if (typingCoroutine != null) StopCoroutine(typingCoroutine);
             typingCoroutine = StartCoroutine(TypeText(text));
         }
     }
 
+    void LateUpdate()
+    {
+        if (balloonTarget == null) return;
 
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(balloonTarget.position);
+
+        if (screenPos.z < 0)
+        {
+            balloonRoot.SetActive(false);
+            return;
+        }
+
+        balloonRoot.SetActive(true);
+        balloonTransform.position = screenPos + screenOffset;
+    }
 
     private IEnumerator TypeText(string text)
     {
         dialogueText.text = "";
+
         foreach (char c in text)
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(0.03f);
         }
+
         typingCoroutine = null;
     }
-    IEnumerator TypeBalloon(string text)
-    {
 
+    private IEnumerator TypeBalloon(string text)
+    {
+        // 1. 전체 텍스트로 말풍선 크기 계산
+        balloonText.text = text;
         ResizeBalloon(balloonText);
+
+        // 2. 다시 비우고 타이핑 시작
+        balloonText.text = "";
+
         foreach (char c in text)
         {
             balloonText.text += c;
-            
             yield return new WaitForSeconds(0.03f);
         }
 
         typingCoroutine = null;
     }
 
-    public bool IsTyping => typingCoroutine != null;
-
     void ResizeBalloon(Text text)
     {
-        float finalWidth = text.preferredWidth;
+        float padding = 20f;
+        float width = text.preferredWidth + padding;
 
-        Vector2 size = balloonRenderer.size;
-        size.x = finalWidth;
-        balloonRenderer.size = size;
+        balloonTransform.sizeDelta =
+            new Vector2(width, balloonTransform.sizeDelta.y);
+
+        balloonText.rectTransform.sizeDelta =
+            new Vector2(width, balloonText.rectTransform.sizeDelta.y);
     }
+
+    public bool IsTyping => typingCoroutine != null;
 }
