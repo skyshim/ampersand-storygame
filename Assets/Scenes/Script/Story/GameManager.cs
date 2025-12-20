@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
         StartPlayerMode();
         Input.ResetInputAxes();
 
-        StartPlayerMode();
+        var current = storyController.characterManager.currentCharacter;
+        if (current != null) CameraManager.Instance.StartFollow(current.transform);
     }
 }

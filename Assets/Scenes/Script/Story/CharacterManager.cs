@@ -32,7 +32,10 @@ public class CharacterManager : MonoBehaviour
         if (currentCharacter == null)
             Debug.Log("캐릭터 못 찾음 :" + name);
         else
+        {
             Debug.Log("캐릭터 지정함 :" + name);
+            CameraManager.Instance.StartFollow(currentCharacter.transform);
+        }
     }
 
     public IEnumerator MoveCharacter(string name, Vector3 target, float duration)
