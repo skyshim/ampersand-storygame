@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea166089ceb3ed84f8fb2e99caaa1864, type: 3}
-  m_Name: S2_Player_FindCamera
+  m_Name: S2_P_Photo
   m_EditorClassIdentifier: 
-  sceneName: S2_Player_FindCamera
+  sceneName: S2_Player_Photo
   sceneType: 1
   events:
   - description: p2-1_s
     actions:
     - type: 6
-      characterName: 
+      characterName: "\uC11C\uC9C4"
       dialogueText: 
-      isBalloon: 0
+      messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
@@ -32,4 +32,4 @@ MonoBehaviour:
       playingCharacterName: "\uC11C\uC9C4"
   nextCondition:
     type: 2
-    parameter: findCamera
+    parameter: setCamera

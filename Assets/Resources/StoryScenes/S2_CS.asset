@@ -1,0 +1,372 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea166089ceb3ed84f8fb2e99caaa1864, type: 3}
+  m_Name: S2_CS
+  m_EditorClassIdentifier: 
+  sceneName: 
+  sceneType: 0
+  events:
+  - description: c2-1_toCamera
+    actions:
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: c2-2_toCamera
+    actions:
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: c2-3_wait
+    actions:
+    - type: 5
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+  - description: c2-4_photo
+    actions:
+    - type: 2
+      characterName: 
+      dialogueText: sound
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: c2-5_photoAni
+    actions:
+    - type: 2
+      characterName: 
+      dialogueText: sound
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: 
+      dialogueText: "\uB300\uCDA9 \uCC30\uCE75\uD558\uB294 \uC560\uB2C8\uBA54\uC774\uC158"
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: c2-6_move
+    actions:
+    - type: 3
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 1
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: c2-7_move
+    actions:
+    - type: 3
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 1
+      cameraTargetSize: 6
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: leftwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  nextCondition:
+    type: 0
+    parameter: 

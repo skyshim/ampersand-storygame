@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea166089ceb3ed84f8fb2e99caaa1864, type: 3}
-  m_Name: S2_Dialogue
+  m_Name: S2_D
   m_EditorClassIdentifier: 
   sceneName: 
   sceneType: 0
@@ -107,6 +107,21 @@ MonoBehaviour:
       dialogueText: "\uB0B4\uAC00 \uB3C8\uC740 \uC81C\uC77C \uB9CE\uC774 \uB0C8\uAC70\uB4E0
         \u3161\u3161"
       messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: 2-5_target
+    actions:
+    - type: 0
+      characterName: 
+      dialogueText: "\uCE74\uBA54\uB77C\uB97C \uC138\uD305\uD558\uC790."
+      messageType: 2
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 

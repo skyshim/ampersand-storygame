@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea166089ceb3ed84f8fb2e99caaa1864, type: 3}
-  m_Name: S1_Dialogue
+  m_Name: S1_D
   m_EditorClassIdentifier: 
   sceneName: S1_Dialogue
   sceneType: 0
