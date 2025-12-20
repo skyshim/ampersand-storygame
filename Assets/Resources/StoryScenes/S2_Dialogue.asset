@@ -19,21 +19,8 @@ MonoBehaviour:
     actions:
     - type: 0
       characterName: 
-      dialogueText: 
-      isBalloon: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 0
-      animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: 0}
-      cameraMoveDuration: 0
-      cameraTargetSize: 0
-      newBackground: {fileID: 0}
-      waitDuration: 0
-      playingCharacterName: 
-    - type: 0
-      characterName: 
-      dialogueText: 
-      isBalloon: 0
+      dialogueText: "'\uCE74\uBA54\uB77C' \uC544\uC774\uD15C\uC744 \uC5BB\uC5C8\uB2E4!"
+      messageType: 2
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
@@ -45,10 +32,81 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 2-2_s
     actions:
-    - type: 0
-      characterName: 
+    - type: 2
+      characterName: "\uC11C\uC9C4"
       dialogueText: 
-      isBalloon: 0
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 0
+      characterName: "\uC11C\uC9C4"
+      dialogueText: "\uB098\uC758 \uC18C\uC911\uD55C \uCF54\uB2E5 M35..."
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: 2-3_h
+    actions:
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 0
+      characterName: "\uD574\uC601"
+      dialogueText: "\u2018\uB098\uC758\u2019 \uAC00 \uC544\uB2C8\uB77C \u201C\uC6B0\uB9AC\uC758\u201D
+        \uACA0\uC9C0"
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+  - description: 2-4_s
+    actions:
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: back
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+    - type: 0
+      characterName: "\uC11C\uC9C4"
+      dialogueText: "\uB0B4\uAC00 \uB3C8\uC740 \uC81C\uC77C \uB9CE\uC774 \uB0C8\uAC70\uB4E0
+        \u3161\u3161"
+      messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 

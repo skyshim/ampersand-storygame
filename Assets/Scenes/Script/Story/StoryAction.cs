@@ -11,7 +11,7 @@ public class StoryAction
     // Dialogue
     public string characterName;
     [TextArea] public string dialogueText;
-    public bool isBalloon;
+    public MessageType messageType;
 
     // Move
     public Vector3 targetPosition;

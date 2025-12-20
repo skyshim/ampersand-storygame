@@ -11,99 +11,92 @@ public class StoryController : MonoBehaviour
     public CameraManager cameraManager;
     public BackgroundManager backgroundManager;
 
-    [Header("Scene 순서대로 불러오기 (Resources/StoryScenes 폴더)")]
+    [Header("Scene 순서")]
     public StoryScene[] storyScenes;
 
-    public bool isProcessing = false;
+    private bool isProcessing = false;
     private int currentSceneIndex = 0;
 
-    private void Awake()
+    // 입력 플래그 (추가)
+    private bool dialogueInputReceived = false;
+
+    void Awake()
     {
         Instance = this;
     }
 
-    private void Update()
+    void Update()
     {
-        if (isProcessing) return;
-
-        if (currentSceneIndex < storyScenes.Length &&
-            storyScenes[currentSceneIndex].sceneType == SceneType.Dialogue)
+        // SceneType 무시하고, 메시지가 떠 있으면 입력 허용
+        if (dialogueUI != null && dialogueUI.IsShowingMessage)
         {
             if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             {
-                OnClick();
+                OnDialogueInput();
             }
         }
+
+        if (isProcessing) return;
     }
 
-    private void OnClick()
+    // 빠졌던 함수 완성
+    void OnDialogueInput()
     {
-        if (isProcessing) return;
-        if (currentSceneIndex >= storyScenes.Length) return;
-
-        isProcessing = true;
-        StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
+        dialogueInputReceived = true;
     }
 
     public void StartScene(int index)
     {
+        if (isProcessing) return;
         if (index < 0 || index >= storyScenes.Length) return;
-        currentSceneIndex = index;
-        StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
+
+        StartCoroutine(ExecuteScene(storyScenes[index]));
     }
 
-    private IEnumerator ExecuteScene(StoryScene scene)
+    IEnumerator ExecuteScene(StoryScene scene)
     {
-        Debug.Log(scene.sceneName);
         isProcessing = true;
-
-        dialogueUI.panel.SetActive(scene.sceneType == SceneType.Dialogue);
-        dialogueUI.balloonRoot.SetActive(scene.sceneType == SceneType.Dialogue);
+        Debug.Log($"▶ Scene Start : {scene.sceneName}");
 
         foreach (var e in scene.events)
         {
-            List<Coroutine> runningCoroutines = new List<Coroutine>();
+            List<Coroutine> runningCoroutines = new();
 
             foreach (var action in e.actions)
             {
                 switch (action.type)
                 {
                     case StoryAction.ActionType.Dialogue:
-                        var charData = characterManager.GetCharacter(action.characterName);
-                        dialogueUI.ShowDialogue(action.characterName, action.dialogueText, action.isBalloon, charData?.portrait, charData?.transform);
-
-                        while (dialogueUI.IsTyping)
-                            yield return null;
-
-                        bool clicked = false;
-                        while (!clicked)
-                        {
-                            if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
-                                clicked = true;
-                            yield return null;
-                        }
+                        ShowMessage(action);
+                        yield return WaitForDialogueInput();
                         break;
 
                     case StoryAction.ActionType.Move:
-                        runningCoroutines.Add(StartCoroutine(characterManager.MoveCharacter(action.characterName, action.targetPosition, action.moveDuration)));
+                        runningCoroutines.Add(
+                            StartCoroutine(characterManager.MoveCharacter(
+                                action.characterName,
+                                action.targetPosition,
+                                action.moveDuration))
+                        );
                         break;
 
                     case StoryAction.ActionType.Animate:
-                        characterManager.PlayAnimation(action.characterName, action.animationTrigger);
+                        characterManager.PlayAnimation(
+                            action.characterName,
+                            action.animationTrigger);
                         break;
 
                     case StoryAction.ActionType.CameraMove:
                         runningCoroutines.Add(
-                            StartCoroutine(CameraManager.Instance.MoveCamera(
+                            StartCoroutine(cameraManager.MoveCamera(
                                 action.cameraTargetPosition,
                                 action.cameraMoveDuration,
-                                action.cameraTargetSize
-                            ))
+                                action.cameraTargetSize))
                         );
                         break;
 
                     case StoryAction.ActionType.BackgroundChange:
-                        BackgroundManager.Instance.ChangeBackground(action.newBackground);
+                        backgroundManager.ChangeBackground(action.newBackground);
                         break;
 
                     case StoryAction.ActionType.Wait:
@@ -120,26 +113,55 @@ public class StoryController : MonoBehaviour
                 yield return c;
         }
 
-        int nextIndex = currentSceneIndex;
-        if (scene.nextCondition != null && scene.nextCondition.type == NextCondition.ConditionType.Auto)
-            nextIndex++;
+        FinishScene(scene);
+    }
 
+    void ShowMessage(StoryAction action)
+    {
+        var charData = characterManager.GetCharacter(action.characterName);
+
+        dialogueUI.ShowMessage(
+            action.messageType,
+            action.dialogueText,
+            action.characterName,
+            charData?.portrait,
+            charData?.transform
+        );
+    }
+
+    IEnumerator WaitForDialogueInput()
+    {
+        while (dialogueUI.IsTyping)
+            yield return null;
+
+        // 플래그 초기화
+        dialogueInputReceived = false;
+
+        while (!dialogueInputReceived)
+            yield return null;
+    }
+
+    void FinishScene(StoryScene scene)
+    {
         isProcessing = false;
-        GameManager.Instance.OnSceneComplete(nextIndex);
-        Debug.Log("ExecuteScene finished, nextIndex = " + nextIndex);
 
-        if (nextIndex < storyScenes.Length)
+        if (scene.nextCondition == null)
+            return;
+
+        switch (scene.nextCondition.type)
         {
-            var nextScene = storyScenes[nextIndex];
-            GameManager.Instance.OnSceneTypeChanged(nextScene.sceneType);
+            case NextCondition.ConditionType.Auto:
+                currentSceneIndex++;
+                StartScene(currentSceneIndex);
+                break;
 
-            if (nextScene.sceneType == SceneType.PlayerControl)
-            {
-                // PlayerControl 씬인데 대화까지 끝났다면
-                dialogueUI.DisableDialogue();
-                GameManager.Instance.OnDialogueFinished();
-            }
+            case NextCondition.ConditionType.Trigger:
+                // TriggerNextScene에서만 진행
+                break;
         }
+
+        GameManager.Instance.OnSceneComplete(currentSceneIndex);
+        Debug.Log($"■ Scene End → {currentSceneIndex}");
     }
 
     public void TriggerNextScene(string parameter = "")
@@ -148,16 +170,13 @@ public class StoryController : MonoBehaviour
 
         var scene = storyScenes[currentSceneIndex];
         if (scene.nextCondition == null) return;
-        if (scene.nextCondition.type != NextCondition.ConditionType.Trigger)
-            return;
+        if (scene.nextCondition.type != NextCondition.ConditionType.Trigger) return;
 
         if (!string.IsNullOrEmpty(scene.nextCondition.parameter) &&
-            scene.nextCondition.parameter != parameter)
-            return;
+            scene.nextCondition.parameter != parameter) return;
 
         isProcessing = true;
         currentSceneIndex++;
-
         StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
     }
 }

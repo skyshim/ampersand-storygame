@@ -1,146 +1,148 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum MessageType
+{
+    Dialogue,   // 하단 대화창
+    Balloon,    // 캐릭터 말풍선
+    Info        // 안내 / 설명창
+}
+
 public class DialogueUI : MonoBehaviour
 {
+    [Header("Dialogue")]
+    public GameObject dialoguePanel;
     public Text characterText;
     public Text dialogueText;
     public Image characterImage;
-    public GameObject panel;
 
+    [Header("Balloon")]
     public GameObject balloonRoot;
     public Text balloonText;
     public RectTransform balloonTransform;
     public RectTransform bubbleImageRect;
 
-    public Vector3 screenOffset = new Vector3(5f, 5f, 0);
+    [Header("Info")]
+    public GameObject infoPanel;
+    public Text infoText;
+
+    [Header("Settings")]
+    public float typeSpeed = 0.03f;
+    public Vector3 screenOffset = new Vector3(5, 5, 0);
 
     private Coroutine typingCoroutine;
     private Transform balloonTarget;
-
-    private bool isBalloonActive = false;
-
+    private bool followBalloon;
     private Camera mainCam;
+
     void Awake()
     {
         mainCam = Camera.main;
     }
 
-    public void ShowDialogue(
-            string character,
-            string text,
-            bool isBalloon,
-            Sprite portrait = null,
-            Transform target = null
-        )
+    public void ShowMessage(
+        MessageType type,
+        string text,
+        string character = "",
+        Sprite portrait = null,
+        Transform target = null)
     {
-        if (typingCoroutine != null)
+        StopTyping();
+        DisableAll();
+
+        switch (type)
         {
-            StopCoroutine(typingCoroutine);
-            typingCoroutine = null;
-        }
+            case MessageType.Dialogue:
+                dialoguePanel.SetActive(true);
+                characterText.text = character;
+                characterImage.sprite = portrait;
+                typingCoroutine = StartCoroutine(TypeText(dialogueText, text));
+                break;
 
-        if (isBalloon)
-        {
-            // 말풍선 모드
-            isBalloonActive = true;
-            balloonTarget = target;
+            case MessageType.Balloon:
+                followBalloon = true;
+                balloonTarget = target;
+                balloonRoot.SetActive(true);
+                typingCoroutine = StartCoroutine(TypeBalloon(text));
+                break;
 
-            panel.SetActive(false);
-            balloonRoot.SetActive(true);
-
-            typingCoroutine = StartCoroutine(TypeBalloon(text));
-        }
-        else
-        {
-            // 일반 대화창
-            DisableBalloon();
-
-            panel.SetActive(true);
-            characterText.text = character;
-            characterImage.sprite = portrait;
-
-            typingCoroutine = StartCoroutine(TypeText(text));
+            case MessageType.Info:
+                infoPanel.SetActive(true);
+                typingCoroutine = StartCoroutine(TypeText(infoText, text));
+                break;
         }
     }
 
     void LateUpdate()
     {
-        // PlayerControl 상태에서도 돌지 않도록 차단
-        if (!isBalloonActive || balloonTarget == null || mainCam == null)
-            return;
+        if (!followBalloon || balloonTarget == null) return;
 
-        Vector3 screenPos = mainCam.WorldToScreenPoint(balloonTarget.position);
+        Vector3 pos = mainCam.WorldToScreenPoint(balloonTarget.position);
+        if (pos.z < 0) return;
 
-        if (screenPos.z < 0)
-        {
-            balloonRoot.SetActive(false);
-            return;
-        }
-
-        balloonRoot.SetActive(true);
-        balloonTransform.position = screenPos + screenOffset;
+        balloonTransform.position = pos + screenOffset;
     }
 
-    private IEnumerator TypeText(string text)
+    IEnumerator TypeText(Text target, string text)
     {
-        dialogueText.text = "";
-
+        target.text = "";
         foreach (char c in text)
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            target.text += c;
+            yield return new WaitForSeconds(typeSpeed);
         }
-
         typingCoroutine = null;
     }
 
-    private IEnumerator TypeBalloon(string text)
+    IEnumerator TypeBalloon(string text)
     {
-        // 1. 전체 텍스트로 말풍선 크기 계산
         balloonText.text = text;
-        ResizeBalloon(balloonText);
-
-        // 2. 다시 비우고 타이핑 시작
+        ResizeBalloon();
         balloonText.text = "";
 
         foreach (char c in text)
         {
             balloonText.text += c;
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(typeSpeed);
         }
-
         typingCoroutine = null;
     }
 
-    void ResizeBalloon(Text text)
+    void ResizeBalloon()
     {
         float padding = 25f;
+        float width = balloonText.preferredWidth + padding;
+        bubbleImageRect.sizeDelta = new Vector2(width, bubbleImageRect.sizeDelta.y);
+    }
 
-        float width = text.preferredWidth + padding;
+    void StopTyping()
+    {
+        if (typingCoroutine != null)
+            StopCoroutine(typingCoroutine);
+        typingCoroutine = null;
+    }
 
-        // Image 자체를 늘린다 (9-Slice 적용)
-        bubbleImageRect.sizeDelta =
-            new Vector2(width, bubbleImageRect.sizeDelta.y);
+    void DisableAll()
+    {
+        dialoguePanel.SetActive(false);
+        balloonRoot.SetActive(false);
+        infoPanel.SetActive(false);
 
-        // Text는 padding 고려해서 약간 작게
-        balloonText.rectTransform.sizeDelta =
-            new Vector2(width - padding, balloonText.rectTransform.sizeDelta.y);
+        followBalloon = false;
+        balloonTarget = null;
     }
 
     public void DisableDialogue()
     {
-        DisableBalloon();
-        panel.SetActive(false);
-    }
-
-    void DisableBalloon()
-    {
-        isBalloonActive = false;
-        balloonTarget = null;
-        balloonRoot.SetActive(false);
+        StopTyping();
+        DisableAll();
     }
 
     public bool IsTyping => typingCoroutine != null;
+    public bool IsShowingMessage =>
+    dialoguePanel.activeSelf ||
+    balloonRoot.activeSelf ||
+    infoPanel.activeSelf;
 }
