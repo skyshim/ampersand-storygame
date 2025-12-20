@@ -12,6 +12,7 @@ public class DialogueUI : MonoBehaviour
     public GameObject balloonRoot;
     public Text balloonText;
     public RectTransform balloonTransform;
+    public RectTransform bubbleImageRect;
 
     public Vector3 screenOffset = new Vector3(5f, 5f, 0);
 
@@ -99,14 +100,17 @@ public class DialogueUI : MonoBehaviour
 
     void ResizeBalloon(Text text)
     {
-        float padding = 20f;
+        float padding = 25f;
+
         float width = text.preferredWidth + padding;
 
-        balloonTransform.sizeDelta =
-            new Vector2(width, balloonTransform.sizeDelta.y);
+        // ★ Image 자체를 늘린다 (9-Slice 적용)
+        bubbleImageRect.sizeDelta =
+            new Vector2(width, bubbleImageRect.sizeDelta.y);
 
+        // Text는 padding 고려해서 약간 작게
         balloonText.rectTransform.sizeDelta =
-            new Vector2(width, balloonText.rectTransform.sizeDelta.y);
+            new Vector2(width - padding, balloonText.rectTransform.sizeDelta.y);
     }
 
     public bool IsTyping => typingCoroutine != null;
