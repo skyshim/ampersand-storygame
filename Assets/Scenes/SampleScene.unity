@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7442202}
   - component: {fileID: 7442204}
   - component: {fileID: 7442205}
+  - component: {fileID: 7442206}
   m_Layer: 0
   m_Name: Seojin
   m_TagString: Player
@@ -197,7 +198,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 1cf490d7a6923dc4e9e21a73d20e9639, type: 3}
+  m_Sprite: {fileID: -1175602108, guid: 454d70216f5f89f43bc1b15b0c5f0509, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,6 +281,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7394903, y: 0.23569298}
   m_EdgeRadius: 0
+--- !u!95 &7442206
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442200}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b5070afcc4ea444d9362cb611a74793, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9540632
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,6 +685,7 @@ GameObject:
   - component: {fileID: 85631630}
   - component: {fileID: 85631633}
   - component: {fileID: 85631634}
+  - component: {fileID: 85631635}
   m_Layer: 0
   m_Name: Aayoon
   m_TagString: Player
@@ -711,7 +734,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8a3da0ce90974614bb60a6347769a473, type: 3}
+  m_Sprite: {fileID: 1429931426, guid: b2d6b4c56f21f984d8a21252fc5f0e51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -809,6 +832,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.722816, y: 0.2428062}
   m_EdgeRadius: 0
+--- !u!95 &85631635
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85631629}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 149e8ea82f53d9c42a7c4b3854715ee5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &105693272
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,22 +1845,22 @@ MonoBehaviour:
   characters:
   - characterName: "\uC544\uC724"
     transform: {fileID: 85631631}
-    animator: {fileID: 0}
+    animator: {fileID: 85631635}
     portrait: {fileID: 21300000, guid: 97136812d5ea34c4d86b92d24d21ec26, type: 3}
     rb: {fileID: 85631633}
   - characterName: "\uD574\uC601"
     transform: {fileID: 891308904}
-    animator: {fileID: 0}
+    animator: {fileID: 891308909}
     portrait: {fileID: 21300000, guid: a6c8cd42c4b6a9e4e8b544c8a40258e6, type: 3}
     rb: {fileID: 891308907}
   - characterName: "\uC740\uD6C4"
     transform: {fileID: 1381137079}
-    animator: {fileID: 0}
+    animator: {fileID: 1381137084}
     portrait: {fileID: 21300000, guid: c20d4264dad91ed419ff82d13bf505bd, type: 3}
     rb: {fileID: 1381137082}
   - characterName: "\uC11C\uC9C4"
     transform: {fileID: 7442201}
-    animator: {fileID: 0}
+    animator: {fileID: 7442206}
     portrait: {fileID: 21300000, guid: a670232f0ff3f0844bb0a3425ae20471, type: 3}
     rb: {fileID: 7442204}
   currentCharacter:
@@ -3597,8 +3641,10 @@ MonoBehaviour:
   backgroundManager: {fileID: 472550260}
   storyScenes:
   - {fileID: 11400000, guid: 2106ceb3ac4a0384d90c13d0b882ad4b, type: 2}
+  - {fileID: 11400000, guid: 769b775d810a75f478b070e2f04c50f6, type: 2}
   - {fileID: 11400000, guid: 702cc0f11e7f0c144a66f5d72adbacd7, type: 2}
   - {fileID: 11400000, guid: daf1595e21528074db5fd0525aa9c161, type: 2}
+  - {fileID: 11400000, guid: 3c95b962b6d7c5e42849b4ed6b5bed75, type: 2}
   isProcessing: 0
 --- !u!4 &714625293
 Transform:
@@ -5257,6 +5303,7 @@ GameObject:
   - component: {fileID: 891308905}
   - component: {fileID: 891308907}
   - component: {fileID: 891308908}
+  - component: {fileID: 891308909}
   m_Layer: 0
   m_Name: Haeyoung
   m_TagString: Player
@@ -5320,7 +5367,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fe57dd1885ce73746a242023680126b4, type: 3}
+  m_Sprite: {fileID: 1804880942, guid: 5a6e0667672ac4a4fb0dc166e7eaa8c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5403,6 +5450,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.70088005, y: 0.23370147}
   m_EdgeRadius: 0
+--- !u!95 &891308909
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891308903}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d52ab88bc9548b8439939b6efed64005, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &928114040
 GameObject:
   m_ObjectHideFlags: 0
@@ -7123,7 +7191,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f2322582f7f24fd4ab2c5453adb827ae, type: 3}
-    m_FontSize: 8
+    m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -7639,6 +7707,7 @@ GameObject:
   - component: {fileID: 1381137080}
   - component: {fileID: 1381137082}
   - component: {fileID: 1381137083}
+  - component: {fileID: 1381137084}
   m_Layer: 0
   m_Name: Eunhoo
   m_TagString: Player
@@ -7702,7 +7771,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 14106db0d047073478584dd680ba1015, type: 3}
+  m_Sprite: {fileID: -147322031, guid: 345d0d9c458be5e47b803310821619dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7785,6 +7854,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7122259, y: 0.23825407}
   m_EdgeRadius: 0
+--- !u!95 &1381137084
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381137078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a35111576e2a40c4eaf674702744f911, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1395361646
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,6 +10444,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 1860052228}
   interactButton: {fileID: 1375454215}
+  playerRb: {fileID: 7442204}
+  playerAnimator: {fileID: 7442206}
+  moveSpeed: 3
 --- !u!212 &1860052231
 SpriteRenderer:
   m_ObjectHideFlags: 0

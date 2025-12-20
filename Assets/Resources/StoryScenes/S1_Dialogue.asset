@@ -48,13 +48,26 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-3_s
     actions:
-    - type: 1
+    - type: 2
       characterName: "\uC11C\uC9C4"
-      dialogueText: "\uBC8C\uC368 \uC774 \uD559\uAD50\uB3C4 \uC548\uB155\uC774\uB124. "
+      dialogueText: 
       isBalloon: 0
       targetPosition: {x: -4, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: s_left
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+    - type: 1
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: -6.8, y: 4.41, z: 0}
+      moveDuration: 0.2
+      animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -77,13 +90,13 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-4_a
     actions:
-    - type: 1
+    - type: 2
       characterName: "\uC544\uC724"
-      dialogueText: "\uBC8C\uC368 \uC774 \uD559\uAD50\uB3C4 \uC548\uB155\uC774\uB124. "
+      dialogueText: 
       isBalloon: 0
       targetPosition: {x: -8, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: a_right
+      animationTrigger: right
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -106,13 +119,13 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-5_s
     actions:
-    - type: 1
+    - type: 2
       characterName: "\uC11C\uC9C4"
       dialogueText: 
       isBalloon: 0
       targetPosition: {x: -4, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: a_right
+      animationTrigger: back
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -136,12 +149,25 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-6_a
     actions:
+    - type: 1
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: -10.3, y: 4.41, z: 0}
+      moveDuration: 0.3
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uBB50\uB798, \uB108 \uB3D9\uD328 \uAC14\uC5B4\uB3C4 \uB0B4\uC2E0- "
       isBalloon: 0
-      targetPosition: {x: 3.5, y: -0.2, z: 0}
-      moveDuration: 0
+      targetPosition: {x: -10.2, y: -0.2, z: 0}
+      moveDuration: 0.3
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
@@ -151,13 +177,13 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-7_h
     actions:
-    - type: 1
+    - type: 2
       characterName: "\uD574\uC601"
       dialogueText: 
       isBalloon: 0
       targetPosition: {x: -6.7, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: h_front
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -180,13 +206,13 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-8_en
     actions:
-    - type: 1
+    - type: 2
       characterName: "\uC740\uD6C4"
       dialogueText: 
       isBalloon: 0
       targetPosition: {x: -5.4, y: 4.2, z: 0}
       moveDuration: 1
-      animationTrigger: en_front
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -208,6 +234,19 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-9_h
     actions:
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC5BC\uB978 \uCD9C\uBC1C\uD560\uAE4C? \uC601\uD654\uB294 \uBA87
@@ -239,6 +278,19 @@ MonoBehaviour:
       playingCharacterName: 
   - description: 1-11_s
     actions:
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      isBalloon: 0
+      targetPosition: {x: 1.2, y: -0.2, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uADF8\uB798.. \uC2AC\uC2AC \uCD9C\uBC1C\uD558\uC790.  "

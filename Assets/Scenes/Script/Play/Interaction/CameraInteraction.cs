@@ -6,6 +6,7 @@ public class CameraInteraction : MonoBehaviour, IInteractable
     {
         Debug.Log("Interacted with Camera");
 
+        StoryController.Instance.TriggerNextScene("findCamera");
         // 여기서 할 것들:
         // StoryController.Instance.StartScene(...)
         // 컷씬 시작

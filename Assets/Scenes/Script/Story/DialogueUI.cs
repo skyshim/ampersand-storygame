@@ -19,31 +19,45 @@ public class DialogueUI : MonoBehaviour
     private Coroutine typingCoroutine;
     private Transform balloonTarget;
 
+    private bool isBalloonActive = false;
+
+    private Camera mainCam;
+    void Awake()
+    {
+        mainCam = Camera.main;
+    }
+
     public void ShowDialogue(
-        string character,
-        string text,
-        bool isBalloon,
-        Sprite portrait = null,
-        Transform target = null
-    )
+            string character,
+            string text,
+            bool isBalloon,
+            Sprite portrait = null,
+            Transform target = null
+        )
     {
         if (typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
 
         if (isBalloon)
         {
+            // 말풍선 모드
+            isBalloonActive = true;
+            balloonTarget = target;
+
             panel.SetActive(false);
             balloonRoot.SetActive(true);
-
-            balloonTarget = target;
 
             typingCoroutine = StartCoroutine(TypeBalloon(text));
         }
         else
         {
-            balloonRoot.SetActive(false);
-            panel.SetActive(true);
+            // 일반 대화창
+            DisableBalloon();
 
+            panel.SetActive(true);
             characterText.text = character;
             characterImage.sprite = portrait;
 
@@ -53,9 +67,11 @@ public class DialogueUI : MonoBehaviour
 
     void LateUpdate()
     {
-        if (balloonTarget == null) return;
+        // PlayerControl 상태에서도 돌지 않도록 차단
+        if (!isBalloonActive || balloonTarget == null || mainCam == null)
+            return;
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(balloonTarget.position);
+        Vector3 screenPos = mainCam.WorldToScreenPoint(balloonTarget.position);
 
         if (screenPos.z < 0)
         {
@@ -104,13 +120,26 @@ public class DialogueUI : MonoBehaviour
 
         float width = text.preferredWidth + padding;
 
-        // ★ Image 자체를 늘린다 (9-Slice 적용)
+        // Image 자체를 늘린다 (9-Slice 적용)
         bubbleImageRect.sizeDelta =
             new Vector2(width, bubbleImageRect.sizeDelta.y);
 
         // Text는 padding 고려해서 약간 작게
         balloonText.rectTransform.sizeDelta =
             new Vector2(width - padding, balloonText.rectTransform.sizeDelta.y);
+    }
+
+    public void DisableDialogue()
+    {
+        DisableBalloon();
+        panel.SetActive(false);
+    }
+
+    void DisableBalloon()
+    {
+        isBalloonActive = false;
+        balloonTarget = null;
+        balloonRoot.SetActive(false);
     }
 
     public bool IsTyping => typingCoroutine != null;

@@ -15,7 +15,7 @@ MonoBehaviour:
   sceneName: S2_Player_FindCamera
   sceneType: 1
   events:
-  - description: "Set Charac : \uC11C\uC9C4"
+  - description: p2-1_s
     actions:
     - type: 6
       characterName: 
@@ -31,5 +31,5 @@ MonoBehaviour:
       waitDuration: 0
       playingCharacterName: "\uC11C\uC9C4"
   nextCondition:
-    type: 0
-    parameter: 
+    type: 2
+    parameter: findCamera

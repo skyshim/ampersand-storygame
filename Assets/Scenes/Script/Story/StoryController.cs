@@ -41,6 +41,7 @@ public class StoryController : MonoBehaviour
         if (isProcessing) return;
         if (currentSceneIndex >= storyScenes.Length) return;
 
+        isProcessing = true;
         StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
     }
 
@@ -135,8 +136,28 @@ public class StoryController : MonoBehaviour
             if (nextScene.sceneType == SceneType.PlayerControl)
             {
                 // PlayerControl 씬인데 대화까지 끝났다면
+                dialogueUI.DisableDialogue();
                 GameManager.Instance.OnDialogueFinished();
             }
         }
+    }
+
+    public void TriggerNextScene(string parameter = "")
+    {
+        if (isProcessing) return;
+
+        var scene = storyScenes[currentSceneIndex];
+        if (scene.nextCondition == null) return;
+        if (scene.nextCondition.type != NextCondition.ConditionType.Trigger)
+            return;
+
+        if (!string.IsNullOrEmpty(scene.nextCondition.parameter) &&
+            scene.nextCondition.parameter != parameter)
+            return;
+
+        isProcessing = true;
+        currentSceneIndex++;
+
+        StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
     }
 }

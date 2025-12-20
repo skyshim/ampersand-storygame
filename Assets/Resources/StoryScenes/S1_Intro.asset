@@ -153,7 +153,7 @@ MonoBehaviour:
       animationTrigger: 
       cameraTargetPosition: {x: -5, y: 3, z: -10}
       cameraMoveDuration: 0.5
-      cameraTargetSize: 3
+      cameraTargetSize: 4
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
       playingCharacterName: 
