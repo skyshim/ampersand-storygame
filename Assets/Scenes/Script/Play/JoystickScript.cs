@@ -7,8 +7,8 @@ public class JoystickScript : MonoBehaviour
     public bool InteractPressed { get; private set; }
 
     // ===== UI =====
-    public GameObject joystick;
-    public GameObject interactButton;
+    public CanvasGroup joystickCanvasGroup;
+    public CanvasGroup interactButtonCanvasGroup;
 
     // ===== 캐릭터 =====
     public Rigidbody2D playerRb;
@@ -17,18 +17,30 @@ public class JoystickScript : MonoBehaviour
 
     // 마지막 바라본 방향
     private Vector2 lastDirection = Vector2.down;
-
     private Vector2 currentAnimDirection = Vector2.zero;
     private bool isWalking = false;
 
+    // 조이스틱 활성화 상태
+    private bool isJoystickEnabled = false;
+
+    void Start()
+    {
+        HideJoystick();
+    }
+
     void Update()
     {
+        // 조이스틱이 비활성화 상태면 애니메이션 처리 안 함
+        if (!isJoystickEnabled) return;
+
         HandleAnimation();
     }
 
     void FixedUpdate()
     {
-        if (playerRb == null) return;
+        // 조이스틱이 비활성화 상태면 움직임 처리 안 함
+        if (!isJoystickEnabled || playerRb == null) return;
+
         playerRb.velocity = Direction.normalized * moveSpeed;
     }
 
@@ -66,7 +78,6 @@ public class JoystickScript : MonoBehaviour
     void PlayWalk(Vector2 dir)
     {
         ResetTriggers();
-
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
         {
             if (dir.x > 0) playerAnimator.SetTrigger("rightwalk");
@@ -82,7 +93,6 @@ public class JoystickScript : MonoBehaviour
     void PlayIdle(Vector2 dir)
     {
         ResetTriggers();
-
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
         {
             if (dir.x > 0) playerAnimator.SetTrigger("right");
@@ -101,7 +111,6 @@ public class JoystickScript : MonoBehaviour
         playerAnimator.ResetTrigger("frontwalk");
         playerAnimator.ResetTrigger("leftwalk");
         playerAnimator.ResetTrigger("rightwalk");
-
         playerAnimator.ResetTrigger("front");
         playerAnimator.ResetTrigger("back");
         playerAnimator.ResetTrigger("left");
@@ -113,18 +122,56 @@ public class JoystickScript : MonoBehaviour
     // =============================
     public void ShowJoystick()
     {
-        joystick.SetActive(true);
-        interactButton.SetActive(true);
+        Debug.Log("ShowJoystick called");
+        isJoystickEnabled = true;
+
+        if (joystickCanvasGroup != null)
+        {
+            joystickCanvasGroup.alpha = 1f;
+            joystickCanvasGroup.interactable = true;
+            joystickCanvasGroup.blocksRaycasts = true;
+        }
+
+        if (interactButtonCanvasGroup != null)
+        {
+            interactButtonCanvasGroup.alpha = 1f;
+            interactButtonCanvasGroup.interactable = true;
+            interactButtonCanvasGroup.blocksRaycasts = true;
+        }
+
         Direction = Vector2.zero;
         InteractPressed = false;
+
+        Debug.Log("Joystick Enabled");
     }
 
     public void HideJoystick()
     {
-        joystick.SetActive(false);
-        interactButton.SetActive(false);
+        Debug.Log("HideJoystick called");
+        isJoystickEnabled = false;
+
+        if (joystickCanvasGroup != null)
+        {
+            joystickCanvasGroup.alpha = 0f;
+            joystickCanvasGroup.interactable = false;
+            joystickCanvasGroup.blocksRaycasts = false;
+        }
+
+        if (interactButtonCanvasGroup != null)
+        {
+            interactButtonCanvasGroup.alpha = 0f;
+            interactButtonCanvasGroup.interactable = false;
+            interactButtonCanvasGroup.blocksRaycasts = false;
+        }
+
         Direction = Vector2.zero;
         InteractPressed = false;
+
+        // 플레이어 멈추기
+        if (playerRb != null)
+            playerRb.velocity = Vector2.zero;
+
+        Debug.Log("Joystick Disabled");
     }
 
     // =============================
@@ -134,14 +181,7 @@ public class JoystickScript : MonoBehaviour
     public void OnDownDown() => Direction = Vector2.down;
     public void OnLeftDown() => Direction = Vector2.left;
     public void OnRightDown() => Direction = Vector2.right;
-
     public void OnButtonUp() => Direction = Vector2.zero;
-
     public void OnInteractDown() => InteractPressed = true;
     public void OnInteractUp() => InteractPressed = false;
-
-    void Start()
-    {
-        HideJoystick();
-    }
 }

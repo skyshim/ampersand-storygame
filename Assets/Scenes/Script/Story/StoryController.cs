@@ -16,8 +16,6 @@ public class StoryController : MonoBehaviour
 
     private bool isProcessing = false;
     private int currentSceneIndex = 0;
-
-    // 입력 플래그 (추가)
     private bool dialogueInputReceived = false;
 
     void Awake()
@@ -27,7 +25,7 @@ public class StoryController : MonoBehaviour
 
     void Update()
     {
-        // SceneType 무시하고, 메시지가 떠 있으면 입력 허용
+        // 메시지가 떠 있으면 입력 허용
         if (dialogueUI != null && dialogueUI.IsShowingMessage)
         {
             if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
@@ -39,7 +37,6 @@ public class StoryController : MonoBehaviour
         if (isProcessing) return;
     }
 
-    // 빠졌던 함수 완성
     void OnDialogueInput()
     {
         dialogueInputReceived = true;
@@ -50,13 +47,20 @@ public class StoryController : MonoBehaviour
         if (isProcessing) return;
         if (index < 0 || index >= storyScenes.Length) return;
 
+        currentSceneIndex = index;
         StartCoroutine(ExecuteScene(storyScenes[index]));
     }
 
     IEnumerator ExecuteScene(StoryScene scene)
     {
         isProcessing = true;
-        Debug.Log($"▶ Scene Start : {scene.sceneName}");
+        Debug.Log($"▶ Scene Start : {scene.sceneName} (Type: {scene.sceneType})");
+
+        // SceneType 변경 알림 (씬 시작할 때)
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnSceneTypeChanged(scene.sceneType);
+        }
 
         foreach (var e in scene.events)
         {
@@ -113,6 +117,29 @@ public class StoryController : MonoBehaviour
                 yield return c;
         }
 
+        // PlayerControl 씬이면 FinishScene 호출하지 않고 대기
+        if (scene.sceneType == SceneType.PlayerControl)
+        {
+            isProcessing = false;
+
+            // 대화 UI 닫기
+            if (dialogueUI != null)
+            {
+                dialogueUI.DisableDialogue();
+            }
+
+            Debug.Log("PlayerControl Scene - Enabling joystick and waiting for trigger");
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.OnDialogueFinished();
+            }
+
+            // 여기서 종료! Trigger가 올 때까지 대기
+            yield break;
+        }
+
+        // PlayerControl이 아니면 일반적으로 FinishScene 호출
         FinishScene(scene);
     }
 
@@ -131,12 +158,14 @@ public class StoryController : MonoBehaviour
 
     IEnumerator WaitForDialogueInput()
     {
+        // 타이핑 끝날 때까지 대기
         while (dialogueUI.IsTyping)
             yield return null;
 
         // 플래그 초기화
         dialogueInputReceived = false;
 
+        // 사용자 클릭 대기
         while (!dialogueInputReceived)
             yield return null;
     }
@@ -145,38 +174,98 @@ public class StoryController : MonoBehaviour
     {
         isProcessing = false;
 
+        // 대화 UI 닫기
+        if (dialogueUI != null)
+        {
+            dialogueUI.DisableDialogue();
+        }
+
+        Debug.Log($"■ Scene End → {scene.sceneName} (Type: {scene.sceneType})");
+
+        // GameManager에 씬 완료 알림
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnSceneComplete(currentSceneIndex);
+        }
+
+        // 다음 씬 처리
         if (scene.nextCondition == null)
+        {
+            Debug.Log("No next condition - scene complete");
             return;
+        }
 
         switch (scene.nextCondition.type)
         {
             case NextCondition.ConditionType.Auto:
+                Debug.Log("Auto condition - moving to next scene");
                 currentSceneIndex++;
-                StartScene(currentSceneIndex);
+                if (currentSceneIndex < storyScenes.Length)
+                {
+                    StartScene(currentSceneIndex);
+                }
+                else
+                {
+                    Debug.Log("All scenes completed!");
+                }
                 break;
 
             case NextCondition.ConditionType.Trigger:
+                Debug.Log("Trigger condition - waiting for TriggerNextScene call");
                 // TriggerNextScene에서만 진행
                 break;
         }
-
-        GameManager.Instance.OnSceneComplete(currentSceneIndex);
-        Debug.Log($"■ Scene End → {currentSceneIndex}");
     }
 
     public void TriggerNextScene(string parameter = "")
     {
-        if (isProcessing) return;
+        Debug.Log($"TriggerNextScene called with parameter: '{parameter}'");
+
+        if (isProcessing)
+        {
+            Debug.LogWarning("Scene is still processing, ignoring trigger");
+            return;
+        }
+
+        if (currentSceneIndex >= storyScenes.Length)
+        {
+            Debug.LogWarning("No more scenes to trigger");
+            return;
+        }
 
         var scene = storyScenes[currentSceneIndex];
-        if (scene.nextCondition == null) return;
-        if (scene.nextCondition.type != NextCondition.ConditionType.Trigger) return;
+        if (scene.nextCondition == null)
+        {
+            Debug.LogWarning($"Scene '{scene.sceneName}' has no next condition");
+            return;
+        }
 
-        if (!string.IsNullOrEmpty(scene.nextCondition.parameter) &&
-            scene.nextCondition.parameter != parameter) return;
+        if (scene.nextCondition.type != NextCondition.ConditionType.Trigger)
+        {
+            Debug.LogWarning($"Scene '{scene.sceneName}' is not a Trigger type (current: {scene.nextCondition.type})");
+            return;
+        }
 
-        isProcessing = true;
+        // 파라미터 체크
+        if (!string.IsNullOrEmpty(scene.nextCondition.parameter))
+        {
+            if (scene.nextCondition.parameter != parameter)
+            {
+                Debug.LogWarning($"Parameter mismatch! Expected: '{scene.nextCondition.parameter}', Got: '{parameter}'");
+                return;
+            }
+        }
+
+        Debug.Log($"Trigger successful! Moving from scene {currentSceneIndex} to {currentSceneIndex + 1}");
+
         currentSceneIndex++;
-        StartCoroutine(ExecuteScene(storyScenes[currentSceneIndex]));
+        if (currentSceneIndex < storyScenes.Length)
+        {
+            StartScene(currentSceneIndex);
+        }
+        else
+        {
+            Debug.Log("All scenes completed!");
+        }
     }
 }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public StoryController storyController;
 
     [Header("현재 진행 상태")]
-    public int currentSceneIndex = 0; // 저장/로드용
+    public int currentSceneIndex = 0;
     public bool isStoryMode = true;
 
     private void Awake()
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     public void StartPlayerMode()
     {
+        Debug.Log("StartPlayerMode called");
         isStoryMode = false;
 
         if (joystick != null)
@@ -37,7 +38,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Joystick Enabled by GameManager");
         }
         else
-            Debug.Log("Jotstick already Enabled");
+        {
+            Debug.LogWarning("Joystick is null!");
+        }
     }
 
     public void SaveProgress()
@@ -52,41 +55,45 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneComplete(int nextSceneIndex)
     {
+        Debug.Log($"OnSceneComplete called: {nextSceneIndex}");
         currentSceneIndex = nextSceneIndex;
         SaveProgress();
-
-        if (isStoryMode)
-        {
-            StartStory();
-        }
     }
 
     public void OnSceneTypeChanged(SceneType type)
     {
         Debug.Log("OnSceneTypeChanged called with: " + type);
-        JoystickScript joystick = FindObjectOfType<JoystickScript>();
-        if (joystick == null) return;
 
-        if (type == SceneType.PlayerControl)
+        // PlayerControl이 아닌 씬에서만 조이스틱 숨김
+        if (type != SceneType.PlayerControl)
         {
-            Debug.Log("SceneType PlayerControl detected");
-            // 아직 대화가 남아있을 수 있으므로 여기서는 바로 켜지지 않음
+            if (joystick != null)
+            {
+                joystick.HideJoystick();
+                Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
+            }
         }
         else
         {
-            joystick.HideJoystick();
-            Debug.Log("Joystick Disabled (Non-PlayerControl Scene)");
+            Debug.Log("PlayerControl Scene - Joystick will be enabled after dialogue");
         }
     }
 
     public void OnDialogueFinished()
     {
-        // 대화까지 끝났을 때 진짜 플레이어 모드 시작
-        Debug.Log("OnDialogueFinished");
+        Debug.Log("OnDialogueFinished called");
         StartPlayerMode();
         Input.ResetInputAxes();
 
         var current = storyController.characterManager.currentCharacter;
-        if (current != null) CameraManager.Instance.StartFollow(current.transform);
+        if (current != null)
+        {
+            CameraManager.Instance.StartFollow(current.transform);
+            Debug.Log($"Camera following: {current.characterName}");
+        }
+        else
+        {
+            Debug.LogWarning("currentCharacter is null!");
+        }
     }
 }

@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
 {
     public List<Character> characters;
     public Character currentCharacter;
+    public JoystickScript joystickScript;
 
     public Character GetCharacter(string name)
     {

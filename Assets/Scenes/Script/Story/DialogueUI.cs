@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -107,6 +106,7 @@ public class DialogueUI : MonoBehaviour
             balloonText.text += c;
             yield return new WaitForSeconds(typeSpeed);
         }
+
         followBalloon = false;
         balloonTarget = null;
         typingCoroutine = null;
@@ -131,7 +131,6 @@ public class DialogueUI : MonoBehaviour
         dialoguePanel.SetActive(false);
         balloonRoot.SetActive(false);
         infoPanel.SetActive(false);
-
         followBalloon = false;
         balloonTarget = null;
     }
@@ -143,8 +142,9 @@ public class DialogueUI : MonoBehaviour
     }
 
     public bool IsTyping => typingCoroutine != null;
+
     public bool IsShowingMessage =>
-    dialoguePanel.activeSelf ||
-    balloonRoot.activeSelf ||
-    infoPanel.activeSelf;
+        dialoguePanel.activeSelf ||
+        balloonRoot.activeSelf ||
+        infoPanel.activeSelf;
 }

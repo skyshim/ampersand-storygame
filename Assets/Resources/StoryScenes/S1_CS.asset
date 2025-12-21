@@ -86,7 +86,7 @@ MonoBehaviour:
       cameraMoveDuration: 0
       cameraTargetSize: 0
       newBackground: {fileID: 0}
-      waitDuration: 1
+      waitDuration: 2
       playingCharacterName: 
   - description: c1-4_a
     actions:
@@ -105,6 +105,19 @@ MonoBehaviour:
       playingCharacterName: 
   - description: c1-5_a
     actions:
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 1
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uB0B4\uC77C \uB418\uBA74 \uC815\uC2E0\uC5C6\uC5B4\uC11C \uC6B0\uB9AC\uB07C\uB9AC

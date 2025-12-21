@@ -1,19 +1,18 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
-    public CharacterManager characterManager;   // 현재 캐릭터 관리
-    public JoystickScript joystick;             // 조이스틱 스크립트
-
-    [Header("Interaction")]
-    public InteractionZone cameraInteractionZone;
+    public CharacterManager characterManager;
+    public JoystickScript joystick;
     public float moveSpeed = 5f;
+
     private Rigidbody2D rb;
+    private bool lastInteractState = false;
 
     private void Start()
     {
-        if (characterManager.currentCharacter != null) rb = characterManager.currentCharacter.rb;
+        if (characterManager.currentCharacter != null)
+            rb = characterManager.currentCharacter.rb;
     }
 
     private void FixedUpdate()
@@ -24,22 +23,32 @@ public class PlayerController : MonoBehaviour
         rb = characterManager.currentCharacter.rb;
         if (rb == null) return;
 
+        // 이동 처리
         Vector2 input = joystick.Direction;
-        if (input != Vector2.zero) rb.velocity = input * moveSpeed;
-        else rb.velocity = Vector2.zero;
+        if (input != Vector2.zero)
+            rb.velocity = input * moveSpeed;
+        else
+            rb.velocity = Vector2.zero;
 
-        if (joystick.InteractPressed) TryInteract();
+        // 상호작용 처리 (버튼을 눌렀을 때만 한 번 호출)
+        if (joystick.InteractPressed && !lastInteractState)
+        {
+            TryInteract();
+        }
+        lastInteractState = joystick.InteractPressed;
     }
+
     private void TryInteract()
     {
-        if (cameraInteractionZone == null)
+        Debug.Log("TryInteract called");
+
+        if (InteractionManager.Instance != null)
         {
-            Debug.LogError("Interactionzone unconnected");
-            return;
+            InteractionManager.Instance.TryInteract();
         }
-        if (cameraInteractionZone.playerInZone)
+        else
         {
-            Debug.Log("Camera Interacted");
+            Debug.LogError("InteractionManager.Instance is null!");
         }
     }
 }
