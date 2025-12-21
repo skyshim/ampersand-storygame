@@ -107,6 +107,8 @@ public class DialogueUI : MonoBehaviour
             balloonText.text += c;
             yield return new WaitForSeconds(typeSpeed);
         }
+        followBalloon = false;
+        balloonTarget = null;
         typingCoroutine = null;
     }
 

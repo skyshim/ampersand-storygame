@@ -1286,7 +1286,7 @@ MonoBehaviour:
   infoPanel: {fileID: 1284304930}
   infoText: {fileID: 1433788930}
   typeSpeed: 0.03
-  screenOffset: {x: -15, y: 50, z: 0}
+  screenOffset: {x: 5, y: 5, z: 0}
 --- !u!224 &171038215
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10638,8 +10638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 1860052228}
   interactButton: {fileID: 1375454215}
-  playerRb: {fileID: 7442204}
-  playerAnimator: {fileID: 7442206}
+  playerRb: {fileID: 0}
+  playerAnimator: {fileID: 0}
   moveSpeed: 3
 --- !u!212 &1860052231
 SpriteRenderer:
