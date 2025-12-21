@@ -226,7 +226,7 @@ MonoBehaviour:
       characterName: "\uC740\uD6C4"
       dialogueText: 
       messageType: 0
-      targetPosition: {x: 6, y: -10.2, z: 0}
+      targetPosition: {x: 5.5, y: -10.2, z: 0}
       moveDuration: 3
       animationTrigger: frontwalk
       cameraTargetPosition: {x: 0, y: 0, z: 0}
@@ -333,13 +333,13 @@ MonoBehaviour:
       targetAlpha: 0
   - description: 3-7_h
     actions:
-    - type: 2
-      characterName: "\uC544\uC724"
+    - type: 0
+      characterName: "\uD574\uC601"
       dialogueText: "... \uADF8\uB7F4 \uB9AC\uAC00- \uB2E4\uC2DC \uC5F4\uC5B4\uBD10"
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: frontwalk
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -349,7 +349,39 @@ MonoBehaviour:
       targetObjectName: 
       targetAlpha: 0
     - type: 2
-      characterName: "\uC544\uC724"
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: rightwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 1
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 6.4, y: -2.7, z: 0}
+      moveDuration: 1.5
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+  - description: 3-7+_h
+    actions:
+    - type: 2
+      characterName: "\uD574\uC601"
       dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
@@ -364,11 +396,11 @@ MonoBehaviour:
       targetObjectName: 
       targetAlpha: 0
     - type: 1
-      characterName: "\uC544\uC724"
+      characterName: "\uD574\uC601"
       dialogueText: 
       messageType: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 0
+      targetPosition: {x: 6.5, y: -10.2, z: 0}
+      moveDuration: 2
       animationTrigger: frontwalk
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
@@ -398,7 +430,7 @@ MonoBehaviour:
   - description: 3-9_wait
     actions:
     - type: 5
-      characterName: "\uC544\uC724"
+      characterName: 
       dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
@@ -449,7 +481,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
-  - description: 3-12_h
+  - description: 3-12_s
     actions:
     - type: 0
       characterName: "\uC11C\uC9C4"
@@ -469,10 +501,9 @@ MonoBehaviour:
       targetAlpha: 0
   - description: 3-13_wait
     actions:
-    - type: 0
+    - type: 5
       characterName: "\uC11C\uC9C4"
-      dialogueText: "\uADF8\uAC8C \uB9D0\uC778\uB370.. \uC5EC\uAE30 \uAC11\uC790\uAE30
-        \uD578\uB4DC\uD3F0\uC774 \uC548 \uD130\uC838."
+      dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0

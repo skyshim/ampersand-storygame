@@ -206,7 +206,7 @@ MonoBehaviour:
       dialogueText: 
       messageType: 2
       targetPosition: {x: -8.6, y: -1.5, z: 0}
-      moveDuration: 0.7
+      moveDuration: 1.7
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
