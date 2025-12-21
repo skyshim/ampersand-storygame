@@ -30,6 +30,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-2_a
     actions:
     - type: 0
@@ -45,6 +47,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-3_?
     actions:
     - type: 2
@@ -60,6 +64,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 2
       characterName: "\uC740\uD6C4"
       dialogueText: 
@@ -73,6 +79,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-3_wait
     actions:
     - type: 5
@@ -88,6 +96,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-4_a
     actions:
     - type: 0
@@ -103,6 +113,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-5_a
     actions:
     - type: 2
@@ -118,6 +130,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uB0B4\uC77C \uB418\uBA74 \uC815\uC2E0\uC5C6\uC5B4\uC11C \uC6B0\uB9AC\uB07C\uB9AC
@@ -132,6 +146,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-6_a
     actions:
     - type: 0
@@ -147,6 +163,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-7_a
     actions:
     - type: 2
@@ -155,18 +173,20 @@ MonoBehaviour:
       messageType: 1
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: right
+      animationTrigger: left
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 1
       characterName: "\uD574\uC601"
       dialogueText: 
       messageType: 0
-      targetPosition: {x: -9, y: 4.41, z: 0}
+      targetPosition: {x: -5, y: 4.41, z: 0}
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: 0}
@@ -175,6 +195,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC11C\uC9C4\uC544 \uCE74\uBA54\uB77C \uC5B4\uB514 \uB480\uC5B4? "
@@ -188,6 +210,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: c1-8_target
     actions:
     - type: 0
@@ -203,6 +227,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   nextCondition:
     type: 0
     parameter: 

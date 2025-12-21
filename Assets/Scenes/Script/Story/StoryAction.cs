@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class StoryAction
 {
-    public enum ActionType { Dialogue, Move, Animate, CameraMove, BackgroundChange, Wait, SetCharacter}
+    public enum ActionType { Dialogue, Move, Animate, CameraMove, BackgroundChange, Wait, SetCharacter, SetSpriteVisibility }
     public ActionType type;
 
     // Dialogue
@@ -33,4 +33,7 @@ public class StoryAction
 
     // SetCharacter
     public string playingCharacterName;
+
+    public string targetObjectName;      // 대상 오브젝트 이름
+    public float targetAlpha;       // true: 보이게, false: 안 보이게
 }

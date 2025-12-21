@@ -110,6 +110,9 @@ public class StoryController : MonoBehaviour
                     case StoryAction.ActionType.SetCharacter:
                         characterManager.SetCurrentCharacter(action.playingCharacterName);
                         break;
+                    case StoryAction.ActionType.SetSpriteVisibility:
+                        SetSpriteVisibility(action.targetObjectName, action.targetAlpha);
+                        break;
                 }
             }
 
@@ -169,6 +172,30 @@ public class StoryController : MonoBehaviour
         while (!dialogueInputReceived)
             yield return null;
     }
+
+    void SetSpriteVisibility(string objectName, float alpha)
+    {
+        // 오브젝트 찾기
+        GameObject targetObj = GameObject.Find(objectName);
+        if (targetObj == null)
+        {
+            Debug.LogWarning($"Object '{objectName}' not found!");
+        }
+
+        // SpriteRenderer 찾기
+        SpriteRenderer spriteRenderer = targetObj.GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            Debug.LogWarning($"SpriteRenderer not found on '{objectName}'!");
+        }
+
+        Color color = spriteRenderer.color;
+        color.a = alpha;
+        spriteRenderer.color = color;
+        Debug.Log($"Set {objectName} visibility to {alpha} instantly");
+    }
+
+
 
     void FinishScene(StoryScene scene)
     {
