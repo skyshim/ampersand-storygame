@@ -65,12 +65,14 @@ public class StoryController : MonoBehaviour
         foreach (var e in scene.events)
         {
             List<Coroutine> runningCoroutines = new();
+            dialogueUI.DisableDialogue();
 
             foreach (var action in e.actions)
             {
                 switch (action.type)
                 {
                     case StoryAction.ActionType.Dialogue:
+
                         ShowMessage(action);
                         yield return WaitForDialogueInput();
                         break;

@@ -30,6 +30,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC544 \uC7A0\uC2DC\uB9CC, \uB098 \uB208 \uAC10\uC558\uC5B4.
@@ -44,6 +46,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-2_s
     actions:
     - type: 2
@@ -59,10 +63,11 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uC11C\uC9C4"
-      dialogueText: "\uC544 \uC7A0\uC2DC\uB9CC, \uB098 \uB208 \uAC10\uC558\uC5B4.
-        \uB2E4\uC2DC\uB2E4\uC2DC-"
+      dialogueText: "\uC544 \uC2DC\uAC04 \uC5C6\uC5B4 \uAC00\uC790 \uADF8\uB0E5."
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
@@ -73,6 +78,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-3_h
     actions:
     - type: 2
@@ -88,6 +95,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uADF8\uB7EC\uC9C0 \uB9D0\uACE0, \uD55C \uBC88 \uB354 \uCC0D\uC5B4\uC918\uB77C-
@@ -102,6 +111,23 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 1
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: -8.6, y: 1.6, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-4_a&en
     actions:
     - type: 0
@@ -117,25 +143,29 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 2
       characterName: "\uC740\uD6C4"
       dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: frontwalk
+      animationTrigger: rightwalk
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 1
       characterName: "\uC740\uD6C4"
-      dialogueText: "\uADF8\uB798!! \uCABC\uC794\uD558\uAC8C-"
+      dialogueText: 
       messageType: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 2
+      targetPosition: {x: 5.5, y: 1.6, z: 0}
+      moveDuration: 3
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
@@ -143,6 +173,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-5_s
     actions:
     - type: 2
@@ -158,6 +190,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uC544 \uB0B4 \uD544\uB984\uCE74\uBA54\uB77C\uB77C\uACE0 !@!!!@"
@@ -171,7 +205,71 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 2
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: frontwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 1
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 6, y: -10.2, z: 0}
+      moveDuration: 3
+      animationTrigger: frontwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-6_en&door
+    actions:
+    - type: 2
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 0
+      characterName: "\uC740\uD6C4"
+      dialogueText: ".. \uC5B4? \uC774\uAC70 \uC548 \uC5F4\uB9AC\uB294\uB370? "
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+  - description: 3-6+_?
     actions:
     - type: 2
       characterName: "\uC544\uC724"
@@ -186,6 +284,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 2
       characterName: "\uD574\uC601"
       dialogueText: '?'
@@ -199,6 +299,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 2
       characterName: "\uC11C\uC9C4"
       dialogueText: '?'
@@ -212,6 +314,23 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 5
+      characterName: "\uC11C\uC9C4"
+      dialogueText: '?'
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-7_h
     actions:
     - type: 2
@@ -227,6 +346,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 2
       characterName: "\uC544\uC724"
       dialogueText: 
@@ -240,6 +361,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 1
       characterName: "\uC544\uC724"
       dialogueText: 
@@ -253,6 +376,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-8_h&door
     actions:
     - type: 2
@@ -268,6 +393,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-9_wait
     actions:
     - type: 5
@@ -283,6 +410,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-10_a
     actions:
     - type: 0
@@ -300,6 +429,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-11_h
     actions:
     - type: 0
@@ -316,6 +447,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-12_h
     actions:
     - type: 0
@@ -332,6 +465,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-13_wait
     actions:
     - type: 0
@@ -348,6 +483,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-14_en
     actions:
     - type: 0
@@ -363,6 +500,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-15_h
     actions:
     - type: 2
@@ -378,6 +517,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uBB50\uC57C, \uB0B4 \uD578\uB4DC\uD3F0\uC740 \uB418\uB294\uB370?"
@@ -391,6 +532,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-16_s
     actions:
     - type: 0
@@ -406,6 +549,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-17_h
     actions:
     - type: 0
@@ -421,6 +566,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-18_h
     actions:
     - type: 0
@@ -436,6 +583,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-19_en
     actions:
     - type: 2
@@ -451,6 +600,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC77C\uB2E8 \uB0B4 \uD578\uB4DC\uD3F0\uC740.. \uC548 \uD130\uC9C0\uB124. "
@@ -464,6 +615,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-20_en
     actions:
     - type: 2
@@ -479,6 +632,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 5
       characterName: 
       dialogueText: 
@@ -492,6 +647,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-21_a
     actions:
     - type: 0
@@ -508,6 +665,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-22_h
     actions:
     - type: 0
@@ -524,6 +683,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-23_en
     actions:
     - type: 0
@@ -539,6 +700,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   - description: 3-24_a
     actions:
     - type: 0
@@ -555,6 +718,8 @@ MonoBehaviour:
       newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
   nextCondition:
     type: 0
     parameter: 

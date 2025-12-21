@@ -26,7 +26,7 @@ MonoBehaviour:
       animationTrigger: 
       cameraTargetPosition: {x: -5, y: 3, z: -10}
       cameraMoveDuration: 2
-      cameraTargetSize: 7
+      cameraTargetSize: 6.5
       newBackground: {fileID: 0}
       waitDuration: 0
       playingCharacterName: 
@@ -68,6 +68,21 @@ MonoBehaviour:
       targetAlpha: 0
     - type: 2
       characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: -8, y: 4, z: 0}
+      moveDuration: 1
+      animationTrigger: left
+      cameraTargetPosition: {x: -5, y: 3, z: -10}
+      cameraMoveDuration: 4
+      cameraTargetSize: 7
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+    - type: 2
+      characterName: "\uC11C\uC9C4"
       dialogueText: 
       messageType: 0
       targetPosition: {x: -8, y: 4, z: 0}
