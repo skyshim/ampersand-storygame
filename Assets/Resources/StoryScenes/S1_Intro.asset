@@ -32,6 +32,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: S2_CameraSetZone
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -47,6 +48,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Aayoon
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -62,6 +64,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Haeyoung
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -77,6 +80,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Eunhoo
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -92,8 +96,25 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Seojin
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: in1_1
     actions:
+    - type: 8
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraMoveDuration: 0.5
+      cameraTargetSize: 5
+      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: caa6e327b7f91404da0f30ef85347bab, type: 3}
     - type: 4
       characterName: 
       dialogueText: 
@@ -109,21 +130,23 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 3
       characterName: 
       dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 1
+      moveDuration: 0
       animationTrigger: 
       cameraTargetPosition: {x: 2, y: 0, z: -10}
-      cameraMoveDuration: 0.5
-      cameraTargetSize: 5
+      cameraMoveDuration: 4.1
+      cameraTargetSize: 6
       newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: in1_2
     actions:
     - type: 4
@@ -141,6 +164,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 3
       characterName: 
       dialogueText: 
@@ -149,13 +173,14 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 0.5
-      cameraTargetSize: 5
+      cameraMoveDuration: 4
+      cameraTargetSize: 6
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: in1_3
     actions:
     - type: 4
@@ -173,6 +198,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 3
       characterName: 
       dialogueText: 
@@ -181,13 +207,14 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 2, y: 0, z: -10}
-      cameraMoveDuration: 0.5
-      cameraTargetSize: 5
+      cameraMoveDuration: 4.2
+      cameraTargetSize: 6
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: in1_4&visible
     actions:
     - type: 4
@@ -205,6 +232,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 3
       characterName: 
       dialogueText: 
@@ -213,13 +241,14 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 0.5
-      cameraTargetSize: 5
+      cameraMoveDuration: 4
+      cameraTargetSize: 6
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -235,6 +264,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Aayoon
       targetAlpha: 1
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -250,6 +280,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Haeyoung
       targetAlpha: 1
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -265,6 +296,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: Eunhoo
       targetAlpha: 1
+      soundSource: {fileID: 0}
     - type: 7
       characterName: 
       dialogueText: 
@@ -273,13 +305,14 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 0.5
+      cameraMoveDuration: 0
       cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: Seojin
       targetAlpha: 1
+      soundSource: {fileID: 0}
   - description: in1_wait
     actions:
     - type: 5
@@ -297,6 +330,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: in1_finishCam
     actions:
     - type: 3
@@ -307,13 +341,14 @@ MonoBehaviour:
       moveDuration: 1
       animationTrigger: 
       cameraTargetPosition: {x: -5, y: 3, z: -10}
-      cameraMoveDuration: 0.5
+      cameraMoveDuration: 1
       cameraTargetSize: 4
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   nextCondition:
     type: 0
     parameter: 

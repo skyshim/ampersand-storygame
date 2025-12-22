@@ -10,6 +10,7 @@ public class StoryController : MonoBehaviour
     public CharacterManager characterManager;
     public CameraManager cameraManager;
     public BackgroundManager backgroundManager;
+    public AudioSource audioSource;
 
     [Header("Scene ¼ø¼­")]
     public StoryScene[] storyScenes;
@@ -61,6 +62,9 @@ public class StoryController : MonoBehaviour
         {
             GameManager.Instance.OnSceneTypeChanged(scene.sceneType);
         }
+
+        if (scene.sceneType != SceneType.PlayerControl) cameraManager.StopFollow();
+        
 
         foreach (var e in scene.events)
         {
@@ -114,6 +118,10 @@ public class StoryController : MonoBehaviour
                         break;
                     case StoryAction.ActionType.SetSpriteVisibility:
                         SetSpriteVisibility(action.targetObjectName, action.targetAlpha);
+                        break;
+
+                    case StoryAction.ActionType.PlaySound:
+                        audioSource.PlayOneShot(action.soundSource);
                         break;
                 }
             }

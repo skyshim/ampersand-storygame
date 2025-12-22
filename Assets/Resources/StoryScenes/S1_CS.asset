@@ -34,6 +34,21 @@ MonoBehaviour:
       targetAlpha: 0
   - description: c1-2_a
     actions:
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 1
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: -5, y: 3, z: -10}
+      cameraMoveDuration: 4
+      cameraTargetSize: 7
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC7A0\uAE50!"

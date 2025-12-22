@@ -30,6 +30,7 @@ public class DialogueUI : MonoBehaviour
     [Header("Settings")]
     public float typeSpeed = 0.03f;
     public Vector3 screenOffset = new Vector3(5, 5, 0);
+    public AudioSource effectSource;
 
     private Coroutine typingCoroutine;
     private Transform balloonTarget;
@@ -51,6 +52,7 @@ public class DialogueUI : MonoBehaviour
         StopTyping();
         DisableAll();
 
+        effectSource.Play();
         switch (type)
         {
             case MessageType.Dialogue:

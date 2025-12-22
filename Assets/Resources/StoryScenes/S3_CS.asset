@@ -18,6 +18,22 @@ MonoBehaviour:
   - description: 3-1_a
     actions:
     - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 2
       characterName: "\uC544\uC724"
       dialogueText: 
       messageType: 0
@@ -32,6 +48,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC544 \uC7A0\uC2DC\uB9CC, \uB098 \uB208 \uAC10\uC558\uC5B4.
@@ -48,6 +65,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-2_s
     actions:
     - type: 2
@@ -65,6 +83,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uC11C\uC9C4"
       dialogueText: "\uC544 \uC2DC\uAC04 \uC5C6\uC5B4 \uAC00\uC790 \uADF8\uB0E5."
@@ -80,8 +99,41 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-3_h
     actions:
+    - type: 2
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: -8.6, y: 1.6, z: 0}
+      moveDuration: 1
+      animationTrigger: backwalk
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 1
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: -8.6, y: 1.6, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 2
       characterName: "\uD574\uC601"
       dialogueText: 
@@ -97,6 +149,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uADF8\uB7EC\uC9C0 \uB9D0\uACE0, \uD55C \uBC88 \uB354 \uCC0D\uC5B4\uC918\uB77C-
@@ -113,38 +166,9 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
-    - type: 1
-      characterName: "\uC740\uD6C4"
-      dialogueText: 
-      messageType: 0
-      targetPosition: {x: -8.6, y: 1.6, z: 0}
-      moveDuration: 1
-      animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: 0}
-      cameraMoveDuration: 0
-      cameraTargetSize: 0
-      newBackground: {fileID: 0}
-      waitDuration: 0
-      playingCharacterName: 
-      targetObjectName: 
-      targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-4_a&en
     actions:
-    - type: 0
-      characterName: "\uC544\uC724"
-      dialogueText: "\uADF8\uB798!! \uCABC\uC794\uD558\uAC8C-"
-      messageType: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 0
-      animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: 0}
-      cameraMoveDuration: 0
-      cameraTargetSize: 0
-      newBackground: {fileID: 0}
-      waitDuration: 0
-      playingCharacterName: 
-      targetObjectName: 
-      targetAlpha: 0
     - type: 2
       characterName: "\uC740\uD6C4"
       dialogueText: 
@@ -160,6 +184,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 1
       characterName: "\uC740\uD6C4"
       dialogueText: 
@@ -175,38 +200,25 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 0
+      characterName: "\uC544\uC724"
+      dialogueText: "\uADF8\uB798!! \uCABC\uC794\uD558\uAC8C-"
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-5_s
     actions:
-    - type: 2
-      characterName: "\uC11C\uC9C4"
-      dialogueText: "\uC624\uB978\uCABD\uD654"
-      messageType: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 0
-      animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: 0}
-      cameraMoveDuration: 0
-      cameraTargetSize: 0
-      newBackground: {fileID: 0}
-      waitDuration: 0
-      playingCharacterName: 
-      targetObjectName: 
-      targetAlpha: 0
-    - type: 0
-      characterName: "\uC11C\uC9C4"
-      dialogueText: "\uC544 \uB0B4 \uD544\uB984\uCE74\uBA54\uB77C\uB77C\uACE0 !@!!!@"
-      messageType: 0
-      targetPosition: {x: 0, y: 0, z: 0}
-      moveDuration: 0
-      animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: 0}
-      cameraMoveDuration: 0
-      cameraTargetSize: 0
-      newBackground: {fileID: 0}
-      waitDuration: 0
-      playingCharacterName: 
-      targetObjectName: 
-      targetAlpha: 0
     - type: 2
       characterName: "\uC740\uD6C4"
       dialogueText: 
@@ -222,6 +234,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 1
       characterName: "\uC740\uD6C4"
       dialogueText: 
@@ -237,7 +250,40 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
-  - description: 3-6_en&door
+      soundSource: {fileID: 0}
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: "\uC624\uB978\uCABD\uD654"
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 0
+      characterName: "\uC11C\uC9C4"
+      dialogueText: "\uC544 \uB0B4 \uD544\uB984\uCE74\uBA54\uB77C\uB77C\uACE0 !@!!!@"
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+  - description: 3-6_door
     actions:
     - type: 2
       characterName: "\uC740\uD6C4"
@@ -250,10 +296,45 @@ MonoBehaviour:
       cameraMoveDuration: 0
       cameraTargetSize: 0
       newBackground: {fileID: 0}
+      waitDuration: 1.5
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: ff758da7174461840abbc2ffc58e7dea, type: 3}
+    - type: 8
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
       waitDuration: 2
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: ff758da7174461840abbc2ffc58e7dea, type: 3}
+    - type: 5
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2.5
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: ff758da7174461840abbc2ffc58e7dea, type: 3}
+  - description: 3-6_en
+    actions:
     - type: 0
       characterName: "\uC740\uD6C4"
       dialogueText: ".. \uC5B4? \uC774\uAC70 \uC548 \uC5F4\uB9AC\uB294\uB370? "
@@ -269,6 +350,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-6+_?
     actions:
     - type: 2
@@ -277,7 +359,7 @@ MonoBehaviour:
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -286,13 +368,14 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 2
       characterName: "\uD574\uC601"
       dialogueText: '?'
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -301,13 +384,14 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 2
       characterName: "\uC11C\uC9C4"
       dialogueText: '?'
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -316,9 +400,10 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 5
-      characterName: "\uC11C\uC9C4"
-      dialogueText: '?'
+      characterName: 
+      dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
@@ -331,6 +416,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-7_h
     actions:
     - type: 0
@@ -348,6 +434,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 2
       characterName: "\uD574\uC601"
       dialogueText: 
@@ -363,12 +450,13 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 1
       characterName: "\uD574\uC601"
       dialogueText: 
       messageType: 0
       targetPosition: {x: 6.4, y: -2.7, z: 0}
-      moveDuration: 1.5
+      moveDuration: 2
       animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
@@ -378,6 +466,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-7+_h
     actions:
     - type: 2
@@ -395,6 +484,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 1
       characterName: "\uD574\uC601"
       dialogueText: 
@@ -410,15 +500,16 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
-  - description: 3-8_h&door
+      soundSource: {fileID: 0}
+  - description: 3-8_h
     actions:
     - type: 2
-      characterName: "\uC544\uC724"
-      dialogueText: sound
+      characterName: "\uD558\uC601"
+      dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: front
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -427,15 +518,80 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
-  - description: 3-9_wait
+      soundSource: {fileID: 8300000, guid: ff758da7174461840abbc2ffc58e7dea, type: 3}
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 2
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 0
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+  - description: 3-9_door
     actions:
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: front
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 8
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: ff758da7174461840abbc2ffc58e7dea, type: 3}
     - type: 5
       characterName: 
       dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
-      animationTrigger: 
+      animationTrigger: right
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
@@ -444,13 +600,14 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-10_a
     actions:
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uD558.. \uBB38 \uC5F4\uC1E0 \uB2F4\uB2F9\uC774 \uB204\uAD70\uB370.
-        \uC774 \uB140\uC11D \uC0AC\uB78C \uC788\uB294\uAC70 \uBED4\uD788 \uC54C\uBA74\uC11C
-        \uC2E4\uC218\uB85C \uBB38 \uC7A0\uADF8\uACE0 \uAC14\uB098 \uBCF4\uB124."
+        \uC774 \uB140\uC11D \uC0AC\uB78C \uC788\uB294\uAC70 \uC54C\uBA74\uC11C \uC2E4\uC218\uB85C
+        \uBB38 \uC7A0\uADF8\uACE0 \uAC14\uB098 \uBCF4\uB124."
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
@@ -463,8 +620,25 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-11_h
     actions:
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC5F4\uC1E0 \uB2F4\uB2F9\uC774\u2026 \uC740\uBE48\uC774\uC5C8\uB098.
@@ -481,6 +655,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-12_s
     actions:
     - type: 0
@@ -499,8 +674,57 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-13_wait
     actions:
+    - type: 2
+      characterName: "\uC740\uD6C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 2
+      characterName: "\uD574\uC601"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 5
       characterName: "\uC11C\uC9C4"
       dialogueText: 
@@ -516,6 +740,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-14_en
     actions:
     - type: 0
@@ -533,6 +758,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-15_h
     actions:
     - type: 2
@@ -550,6 +776,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uBB50\uC57C, \uB0B4 \uD578\uB4DC\uD3F0\uC740 \uB418\uB294\uB370?"
@@ -565,6 +792,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-16_s
     actions:
     - type: 0
@@ -582,11 +810,12 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-17_h
     actions:
-    - type: 0
+    - type: 8
       characterName: "\uC11C\uC9C4"
-      dialogueText: "sound \uC804\uD654"
+      dialogueText: 
       messageType: 0
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
@@ -599,6 +828,23 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: a245fc38360ff38448e493a522eacf15, type: 3}
+    - type: 5
+      characterName: "\uC11C\uC9C4"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 4
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 8300000, guid: a245fc38360ff38448e493a522eacf15, type: 3}
   - description: 3-18_h
     actions:
     - type: 0
@@ -616,6 +862,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-19_en
     actions:
     - type: 2
@@ -633,6 +880,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uD574\uC601"
       dialogueText: "\uC77C\uB2E8 \uB0B4 \uD578\uB4DC\uD3F0\uC740.. \uC548 \uD130\uC9C0\uB124. "
@@ -648,6 +896,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-20_en
     actions:
     - type: 2
@@ -665,6 +914,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 5
       characterName: 
       dialogueText: 
@@ -680,8 +930,25 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-21_a
     actions:
+    - type: 2
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: right
+      cameraTargetPosition: {x: 0, y: 0, z: 0}
+      cameraMoveDuration: 0
+      cameraTargetSize: 0
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uB098\uB3C4\u2026 \uC57C- \uB108 \uACF5\uD3EC \uC601\uD654
@@ -698,6 +965,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-22_h
     actions:
     - type: 0
@@ -716,6 +984,7 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-23_en
     actions:
     - type: 0
@@ -733,8 +1002,25 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
   - description: 3-24_a
     actions:
+    - type: 3
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: -5, y: -2.5, z: -10}
+      cameraMoveDuration: 5
+      cameraTargetSize: 15
+      newBackground: {fileID: 0}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 0
       characterName: "\uC544\uC724"
       dialogueText: "\uC5B4\u2026 \uC544\uAE4C\uB3C4 \uADF8 \uC2DC\uAC04\uC774\uC9C0
@@ -751,6 +1037,89 @@ MonoBehaviour:
       playingCharacterName: 
       targetObjectName: 
       targetAlpha: 0
+      soundSource: {fileID: 0}
+  - description: 3-25_end
+    actions:
+    - type: 7
+      characterName: "\uC544\uC724"
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: -2, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 10
+      newBackground: {fileID: 21300000, guid: 3225c395c0e85f74c8cc6ea9b68f3ce0, type: 3}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: Aayoon
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 7
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: -2, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 10
+      newBackground: {fileID: 21300000, guid: 3225c395c0e85f74c8cc6ea9b68f3ce0, type: 3}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: Haeyoung
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 7
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: -2, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 10
+      newBackground: {fileID: 21300000, guid: 3225c395c0e85f74c8cc6ea9b68f3ce0, type: 3}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: Seojin
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 7
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: -2, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 10
+      newBackground: {fileID: 21300000, guid: 3225c395c0e85f74c8cc6ea9b68f3ce0, type: 3}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: Eunhoo
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 4
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 0
+      animationTrigger: left
+      cameraTargetPosition: {x: 0, y: -2, z: -10}
+      cameraMoveDuration: 3
+      cameraTargetSize: 10
+      newBackground: {fileID: 21300000, guid: 3225c395c0e85f74c8cc6ea9b68f3ce0, type: 3}
+      waitDuration: 2
+      playingCharacterName: 
+      targetObjectName: Eunhoo
+      targetAlpha: 0
+      soundSource: {fileID: 0}
   nextCondition:
     type: 0
     parameter: 
