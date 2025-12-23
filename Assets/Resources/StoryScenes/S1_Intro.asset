@@ -46,6 +46,22 @@ MonoBehaviour:
       newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
       waitDuration: 1
       playingCharacterName: 
+      targetObjectName: S2_Seojin'sCamera
+      targetAlpha: 0
+      soundSource: {fileID: 0}
+    - type: 7
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: -5, y: 3, z: -10}
+      cameraMoveDuration: 0.5
+      cameraTargetSize: 4
+      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      waitDuration: 1
+      playingCharacterName: 
       targetObjectName: Aayoon
       targetAlpha: 0
       soundSource: {fileID: 0}
@@ -125,7 +141,7 @@ MonoBehaviour:
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 1
       cameraTargetSize: 5
-      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
+      newBackground: {fileID: 21300000, guid: 0246c826560332742b309e4a5da42840, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
@@ -138,9 +154,9 @@ MonoBehaviour:
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 0
       animationTrigger: 
-      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraTargetPosition: {x: 1, y: 0, z: -10}
       cameraMoveDuration: 4.1
-      cameraTargetSize: 6
+      cameraTargetSize: 5
       newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
       waitDuration: 1
       playingCharacterName: 
@@ -149,6 +165,22 @@ MonoBehaviour:
       soundSource: {fileID: 0}
   - description: in1_2
     actions:
+    - type: 3
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: -10}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 3, y: -7, z: -10}
+      cameraMoveDuration: 0
+      cameraTargetSize: 5
+      newBackground: {fileID: 21300000, guid: 2cb02d501b8215e4fad4a3a9199254e7, type: 3}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 4
       characterName: 
       dialogueText: 
@@ -159,7 +191,7 @@ MonoBehaviour:
       cameraTargetPosition: {x: 0, y: 0, z: 0}
       cameraMoveDuration: 0
       cameraTargetSize: 0
-      newBackground: {fileID: 21300000, guid: 4484777a26f844a4ca3b493739875e3a, type: 3}
+      newBackground: {fileID: 21300000, guid: 2cb02d501b8215e4fad4a3a9199254e7, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
@@ -172,10 +204,10 @@ MonoBehaviour:
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 1
       animationTrigger: 
-      cameraTargetPosition: {x: 0, y: 0, z: -10}
-      cameraMoveDuration: 4
-      cameraTargetSize: 6
-      newBackground: {fileID: 21300000, guid: e74e2a388bf71524696391b533fd577a, type: 3}
+      cameraTargetPosition: {x: 1, y: -7, z: -10}
+      cameraMoveDuration: 4.2
+      cameraTargetSize: 5
+      newBackground: {fileID: 21300000, guid: 2cb02d501b8215e4fad4a3a9199254e7, type: 3}
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: 
@@ -183,6 +215,22 @@ MonoBehaviour:
       soundSource: {fileID: 0}
   - description: in1_3
     actions:
+    - type: 3
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: -5, y: 2, z: -10}
+      cameraMoveDuration: 0
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: 
+      targetAlpha: 0
+      soundSource: {fileID: 0}
     - type: 4
       characterName: 
       dialogueText: 
@@ -206,9 +254,9 @@ MonoBehaviour:
       targetPosition: {x: 0, y: 0, z: 0}
       moveDuration: 1
       animationTrigger: 
-      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraTargetPosition: {x: -3, y: 2, z: -10}
       cameraMoveDuration: 4.2
-      cameraTargetSize: 6
+      cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
@@ -217,6 +265,22 @@ MonoBehaviour:
       soundSource: {fileID: 0}
   - description: in1_4&visible
     actions:
+    - type: 3
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 2, y: 0, z: -10}
+      cameraMoveDuration: 0
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: Seojin
+      targetAlpha: 1
+      soundSource: {fileID: 0}
     - type: 4
       characterName: 
       dialogueText: 
@@ -242,7 +306,7 @@ MonoBehaviour:
       animationTrigger: 
       cameraTargetPosition: {x: 0, y: 0, z: -10}
       cameraMoveDuration: 4
-      cameraTargetSize: 6
+      cameraTargetSize: 5
       newBackground: {fileID: 0}
       waitDuration: 1
       playingCharacterName: 
@@ -311,6 +375,22 @@ MonoBehaviour:
       waitDuration: 1
       playingCharacterName: 
       targetObjectName: Seojin
+      targetAlpha: 1
+      soundSource: {fileID: 0}
+    - type: 7
+      characterName: 
+      dialogueText: 
+      messageType: 0
+      targetPosition: {x: 0, y: 0, z: 0}
+      moveDuration: 1
+      animationTrigger: 
+      cameraTargetPosition: {x: 0, y: 0, z: -10}
+      cameraMoveDuration: 0
+      cameraTargetSize: 5
+      newBackground: {fileID: 0}
+      waitDuration: 1
+      playingCharacterName: 
+      targetObjectName: S2_Seojin'sCamera
       targetAlpha: 1
       soundSource: {fileID: 0}
   - description: in1_wait
